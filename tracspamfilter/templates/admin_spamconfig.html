@@ -1,0 +1,123 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:i18n="http://genshi.edgewall.org/i18n" i18n:domain="tracspamfilter">
+  <xi:include href="admin.html" />
+  <head>
+    <title>Spam Filter</title>
+  </head>
+
+  <body>
+    <h2>Spam Filtering: Configuration</h2>
+    <div i18n:msg="">See <a href="http://trac.edgewall.org/wiki/SpamFilter">wiki page</a>
+    for a short documentation.</div> <div i18n:msg="">Help translating this plugin at <a
+    href="https://www.transifex.com/projects/p/Trac_Plugin-L10N/resource/spamfilter/">Transifex</a>.</div>
+
+    <form class="mod" id="spamconfig" method="post" action="">
+      <fieldset id="karmatuning">
+        <legend>Karma Tuning</legend>
+        <div class="field">
+          <label>
+            Minimum karma required for a successful submission:
+            <input type="text" id="min_karma" name="min_karma" size="3"
+                   value="${min_karma}" />
+          </label>
+          <br/>
+          <label>
+            Karma assigned to attachments (e.g. to allow relaxed rules for file uploads):
+            <input type="text" id="attachment_karma" name="attachment_karma" size="3"
+                   value="${attachment_karma}" />
+          </label>
+        </div>
+        <p class="hint" i18n:msg="">
+          Content submissions are passed through a set of registered and enabled
+          <em>filter strategies</em>, each of which check the submitted content
+          and may assign <em>karma points</em> to it. The sum of these karma
+          points needs to be greater than or equal to the minimum karma
+          configured here for the submission to be accepted.
+        </p>
+        <table class="listing" id="karmapoints">
+          <thead><tr>
+            <th>Strategy</th>
+            <th>Karma points</th>
+            <th>Description</th>
+          </tr></thead>
+          <tr py:for="strategy in strategies">
+            <th>${strategy.name}</th>
+            <td>
+              <input type="text" name="${strategy.name}_${strategy.variable}"
+                     value="${strategy.karma_points}" size="3" />
+            </td>
+            <td><p class="hint">${strategy.karma_help}</p></td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <fieldset id="logging">
+        <legend>Logging</legend>
+        <div class="field">
+          <label>
+            <input type="checkbox" id="logging_enabled" name="logging_enabled"
+                   checked="${logging_enabled or None}" />
+            Enable
+          </label>
+        </div>
+        <p class="hint" i18n:msg="">
+          The spam filter plugin can optionally log every content submission so
+          that you can monitor and tune the effectiveness of the filtering. The
+          log is stored in the database, and can be viewed under &ldquo;<em>Spam
+          Filtering &rarr; Monitoring</em>&rdquo; from the web administration
+          interface.
+        </p>
+        <div class="field">
+          <label i18n:msg="">
+            Purge old entries after
+            <input type="text" id="purge_age" name="purge_age" size="3"
+                   value="${purge_age}" />
+            days
+          </label>
+        </div>
+        <div class="field">
+          <label i18n:msg="min,max">
+            Number of entries in log message display
+            (${spam_monitor_entries_min}-${spam_monitor_entries_max})
+            <input type="text" id="spam_monitor_entries"  name="spam_monitor_entries" size="4"
+                   value="${spam_monitor_entries}" />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset id="authenticated">
+        <legend>Authenticated</legend>
+        <div class="field">
+          <label>
+            <input type="checkbox" id="trust_authenticated" name="trust_authenticated"
+                   checked="${trust_authenticated or None}" />
+            Trust authenticated users
+          </label>
+        </div>
+        <p class="hint">
+          If authenticated users should not be trusted automatically, this
+          option must be disabled. Instead of full trust the supplied karma
+          value is used in this case.
+        </p>
+        <div class="field">
+          <label>
+            Karma of authenticated users:
+            <input type="text" id="authenticated_karma" name="authenticated_karma" size="3"
+                   value="${authenticated_karma}" />
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="buttons">
+        <input type="submit" value="${_('Apply changes')}" />
+      </div>
+    </form>
+
+  </body>
+
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:i18n="http://genshi.edgewall.org/i18n" i18n:domain="tracspamfilter">
+  <xi:include href="admin.html" />
+  <head>
+    <title>External services</title>
+  </head>
+
+  <body>
+    <h2>Spam Filtering: External services</h2>
+
+    <div py:if="error" class="system-message">
+      <strong>An error checking supplied data occured, see below for details.</strong>
+    </div>
+
+    <form class="mod" id="spamconfig" method="post" action="">
+        <div class="field">
+          <label>
+            <input type="checkbox" id="use_external" name="use_external"
+                   checked="${use_external or None}" />
+            Use external services
+          </label>
+        </div>
+     <fieldset id="external">
+        <div class="field">
+          <label>
+            <input type="checkbox" id="train_external" name="train_external"
+                   checked="${train_external or None}" />
+            Train external services
+          </label>
+          <br/>
+          <label i18n:msg="spam, ham">
+            Skip external services, when internal tests reach a karma of -
+            Spam:
+            <input type="text" id="skip_external" name="skip_external" size="3"
+                   value="${skip_external}" />
+            Ham:
+            <input type="text" id="skip_externalham" name="skip_externalham" size="3"
+                   value="${skip_externalham}" />
+          </label>
+          <br/>
+          <label i18n:msg="spam, ham">
+            Stop external services, when reached a karma of -
+            Spam:
+            <input type="text" id="stop_external" name="stop_external" size="3"
+                   value="${stop_external}" />
+            Ham:
+            <input type="text" id="stop_externalham" name="stop_externalham" size="3"
+                   value="${stop_externalham}" />
+          </label>
+        </div>
+      <fieldset>
+        <legend xml:lang="en">Akismet</legend>
+        <p class="hint" i18n:msg="">
+          The Akismet filter uses the free
+          <a class="ext-link" href="http://akismet.com/">Akismet</a>
+          service to decide if content submissions are potential spam. You need to obtain an
+          API key to use the service, which is freely available for personal use.
+        </p>
+        <div class="field">
+          <label>API key:<br />
+            <input type="text" id="akismet_api_key" name="akismet_api_key" size="24"
+                   value="${akismet_api_key}" />
+          </label>
+        </div>
+        <div class="field">
+          <label>URL:<br />
+            <span xml:lang="en">http://</span><input type="text" id="akismet_api_url" name="akismet_api_url" size="40"
+                          value="${akismet_api_url}" />
+          </label>
+        </div>
+
+        <div py:if="akismeterror" class="system-message" i18n:msg="error">
+          <strong>Key validation failed:</strong> ${akismeterror}
+        </div>
+
+      </fieldset>
+
+      <fieldset py:if="defensio">
+        <legend xml:lang="en">Defensio</legend>
+        <p class="hint" i18n:msg="">
+          The Defensio filter uses the
+          <a class="ext-link"
+          href="http://defensio.com/">Defensio</a>
+          service to decide if content submissions are potential spam. You need to obtain an
+          API key to use the service, which is freely available for personal use.
+        </p>
+        <div class="field">
+          <label>API key:<br />
+            <input type="text" id="defensio_api_key" name="defensio_api_key" size="40"
+                   value="${defensio_api_key}" />
+          </label>
+        </div>
+        <div class="field">
+          <label>URL:<br />
+            <span xml:lang="en">http://</span><input type="text" id="defensio_api_url" name="defensio_api_url" size="40"
+                          value="${defensio_api_url}" />
+          </label>
+        </div>
+
+        <div py:if="defensioerror" class="system-message" i18n:msg="error">
+          <strong>Key validation failed:</strong> ${defensioerror}
+        </div>
+
+      </fieldset>
+
+      <fieldset>
+        <legend xml:lang="en">BlogSpam</legend>
+        <p class="hint" i18n:msg="">
+          The BlogSpam filter uses the free
+          <a class="ext-link" href="http://blogspam.net/">BlogSpam</a>
+          service to decide if content submissions are potential spam.
+        </p>
+        <div class="field">
+          <label>URL:<br />
+            <span xml:lang="en">http://</span><input type="text" id="blogspam_api_url" name="blogspam_api_url" size="40"
+                          value="${blogspam_api_url}" />
+          </label>
+        </div>
+        <div class="field">
+          <label>Tests to skip (comma separated):<br />
+            <input type="text" id="blogspam_skip_tests" name="blogspam_skip_tests" size="80"
+                          value="${blogspam_skip_tests}" /><br/>
+            <span i18n:msg="methods">Possible Values: ${blogspam_methods}</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend xml:lang="en">StopForumSpam</legend>
+        <p class="hint" i18n:msg="">
+          The StopForumSpam filter uses the
+          <a class="ext-link"
+          href="http://stopforumspam.com/">StopForumSpam</a>
+          service to decide if content submissions are potential spam. You need to obtain an
+          API key to report SPAM to the service, which is freely available.
+        </p>
+        <div class="field">
+          <label>API key:<br />
+            <input type="text" id="stopforumspam_api_key" name="stopforumspam_api_key" size="40"
+                   value="${stopforumspam_api_key}" />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend xml:lang="en">BotScout</legend>
+        <p class="hint" i18n:msg="">
+          The BotScout filter uses the
+          <a class="ext-link"
+          href="http://botscout.com/">BotScout</a>
+          service to decide if content submissions are potential spam. You need to obtain an
+          API key to use the service, which is freely available.
+        </p>
+        <div class="field">
+          <label>API key:<br />
+            <input type="text" id="botscout_api_key" name="botscout_api_key" size="24"
+                   value="${botscout_api_key}" />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend xml:lang="en">FSpamList</legend>
+        <p class="hint" i18n:msg="">
+          The FSpamList filter uses the
+          <a class="ext-link" href="http://www.fspamlist.com/">FSpamList</a>
+          service to decide if content submissions are potential spam. You need to obtain an
+          API key to use the service, which is freely available.
+        </p>
+        <div class="field">
+          <label>API key:<br />
+            <input type="text" id="fspamlist_api_key" name="fspamlist_api_key" size="24"
+                   value="${fspamlist_api_key}" />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset py:if="blacklists">
+        <legend xml:lang="en">HTTP:BL</legend>
+        <p class="hint" i18n:msg="">
+          The HTTP_BL filter uses the free
+          <a class="ext-link"
+          href="http://www.projecthoneypot.org/httpbl.php">HTTP:BL</a>
+          service to decide if content submissions are potential spam. You need to obtain an
+          API key to use the service, which is freely available for personal use.
+        </p>
+        <div class="field">
+          <label>API key:<br />
+            <input type="text" id="httpbl_api_key" name="httpbl_api_key" size="24"
+                   value="${httpbl_api_key}" />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset py:if="mollom">
+        <legend xml:lang="en">Mollom</legend>
+        <p class="hint" i18n:msg="">
+          The Mollom filter uses the free
+          <a class="ext-link" href="http://mollom.com/">Mollom</a>
+          service to decide if content submissions are potential spam. You need to obtain
+          API keys to use the service, which are freely available for personal use.
+        </p>
+        <div class="field">
+          <label>Public key:<br />
+            <input type="text" id="mollom_public_key" name="mollom_public_key" size="32"
+                   value="${mollom_public_key}" />
+          </label>
+        </div>
+        <div class="field">
+          <label>Secret key:<br />
+            <input type="text" id="mollom_private_key" name="mollom_private_key" size="32"
+                   value="${mollom_private_key}" />
+          </label>
+        </div>
+        <div class="field">
+          <label>URL:<br />
+            <span xml:lang="en">http://</span><input type="text" id="mollom_api_url"
+            name="mollom_api_url" size="40" value="${mollom_api_url}" />
+          </label>
+        </div>
+
+        <div py:if="mollomerror" class="system-message" i18n:msg="error">
+          <strong>Key validation failed:</strong> ${mollomerror}
+        </div>
+      </fieldset>
+
+      <div py:if="unknownsourceerror" class="system-message" i18n:msg="error">
+        <strong>Key validation failed:</strong> ${unknownsourceerror}
+      </div>
+
+      <fieldset py:if="blacklists">
+        <legend>Free access blacklists</legend>
+        <div class="field">
+          <label>Blacklists (comma separated):<br />
+            <input type="text" id="ip_blacklist_servers"
+            name="ip_blacklist_servers" size="80"
+                   value="${ip_blacklist_servers}" /><br/>
+            <span i18n:msg="">A list of DNS blacklists can be found at the <a href="http://www.unifiedemail.net/Tools/RBLCheck/">RBLCheck</a>
+                   service.</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <p class="hint" i18n:msg="">
+        You can enable or disable these filters from the &ldquo;<em>General &rarr;
+        Plugins</em>&rdquo; panel of the web administration interface.
+      </p>
+
+     </fieldset>
+      <div class="buttons">
+        <input type="submit" value="${_('Apply changes')}" />
+        <input py:if="error" type="submit" name="cancel" value="${_('Revert changes')}" />
+      </div>
+    </form>
+
+  </body>
+
+</html>

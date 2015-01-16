@@ -1,0 +1,68 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:i18n="http://genshi.edgewall.org/i18n" i18n:domain="tracspamfilter"
+      py:strip="">
+      <table class="listing" id="spammonitor">
+        <thead>
+          <tr>
+            <th class="sel" id="selallfield" py:if="allowselect">&nbsp;</th>
+            <th>Path</th>
+            <th>Author</th>
+            <th>IP Address</th>
+            <th>Karma</th>
+            <th>Date/time</th>
+          </tr>
+        </thead>
+        <tbody id="spamtable" py:with="nolink = ['/prefs', '/newticket', '/register']">
+          <py:for each="idx, entry in enumerate(entries)">
+            <tr class="${' '.join(filter(None, [idx % 2 and 'odd' or 'even',
+                                                entry.rejected and 'rejected' or None]))}">
+              <td rowspan="2" py:if="allowselect">
+                <input type="checkbox" name="sel" value="${entry.id}" />
+              </td>
+              <td class="path"
+                  title="${len(entry.path) > 40 and entry.path or None}">
+                <py:choose test="entry.path in nolink">
+                  <py:when test="False"><a href="${href(entry.path)}">${shorten_line(entry.path, 40)}</a></py:when>
+                  <py:otherwise><div>${entry.path}</div></py:otherwise>
+                </py:choose>
+              </td>
+              <td class="author"
+                  py:with="auth_img = entry.authenticated and 'yes.gif' or 'no.gif'"
+                  title="${len(entry.author) > 40 and entry.author or None}">
+                <py:choose test="monitor">
+                  <py:when test="True">
+                    <a href="${href.admin('spamfilter', 'monitor', entry.id)}"><img src="${href.chrome('spamfilter', auth_img)}"
+                       title="${_('User was logged in') if entry.authenticated else _('User was not logged in')}"
+                       alt="${auth_img[:-4]}" />&nbsp;${shorten_line(entry.author, 40) or 'anonymous'}</a>
+                  </py:when>
+                  <py:otherwise>
+                    <img src="${href.chrome('spamfilter', auth_img)}"
+                         title="${_('User was logged in') if entry.authenticated else _('User was not logged in')}"
+                         alt="${auth_img[:-4]}" />&nbsp;${shorten_line(entry.author, 40) or 'anonymous'}
+                  </py:otherwise>
+                </py:choose>
+              </td>
+              <td class="ipnr">${entry.ipnr}</td>
+              <td class="karma">${entry.karma}</td>
+              <td class="time">${format_datetime(entry.time)}</td>
+            </tr>
+            <tr class="${idx % 2 and 'odd' or 'even'}">
+              <td class="details" colspan="5">
+                <ul py:if="entry.getreasons()">
+                  <li py:for="reason in entry.getreasons()">${reason}</li>
+                </ul>
+                <blockquote py:if="shorten_line(entry.content)"><div>${shorten_line(entry.content)}</div></blockquote>
+              </td>
+            </tr>
+          </py:for>
+          <tr py:if="not entries">
+            <td colspan="6" style="text-align:center">No data available</td>
+          </tr>
+        </tbody>
+      </table>
+</html>

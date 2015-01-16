@@ -1,0 +1,119 @@
+/* Generic styles */
+form p.hint { color: #666; font-size: 85%; font-style: italic; margin: .5em 0;
+  padding-left: 1em;
+}
+
+fieldset.radio { border: none; margin: 0; padding: 0 }
+fieldset.radio legend { color: #000; float: left; font-size: 100%;
+ font-weight: normal; padding: 0 1em 0 0;
+}
+fieldset.radio label { padding-right: 1em; vertical-align: middle; }
+fieldset.radio input { vertical-align: middle; }
+
+/* Configuration panel */
+
+fieldset#karmatuning { margin-bottom: 1em; }
+
+table#karmapoints { width: 100%; }
+table#karmapoints p.hint { margin: 0; padding: 0; }
+
+/* Monitoring and Reports panel */
+
+table#spammonitor,
+table#reportmonitor { margin-bottom: 1em; width: 100%; }
+table#spammonitor td,
+table#reportmonitor td { font-size: 90%; }
+table#spammonitor td.path :link,
+table#spammonitor td.path :visited,
+table#reportmonitor td.path :link,
+table#reportmonitor td.path :visited { color: #666; }
+table#spammonitor td.author,
+table#reportmonitor td.author { overflow: hidden; }
+table#spammonitor td.path,
+table#spammonitor td.ipnr,
+table#spammonitor td.time,
+table#reportmonitor td.path,
+table#reportmonitor td.time { font-size: 80%; }
+table#spammonitor td.karma { padding-right: 1em; text-align: right;
+  white-space: nowrap;
+}
+table#spammonitor tr.rejected td { background: #f4d7d7 !important; }
+table#spammonitor tr.rejected td.author { font-weight: bold; }
+table#spammonitor tr.rejected td.karma { color: #b00; font-weight: bold; }
+table#spammonitor td.details { font-size: 85%; font-weight: normal; }
+table#spammonitor td.details ul { list-style: square; margin: 0 0 .5em;
+  padding-left: 2em;
+}
+table#spammonitor td.details blockquote { color: #999; font-style: italic;
+  margin: 0;
+}
+
+/* Log or Report entry details */
+
+form#spamentry .meta,
+form#reportentry .meta { margin: 0; }
+form#spamentry .meta th,
+form#reportentry .meta th { font-weight: bold; padding-right: .5em;
+  text-align: right; vertical-align: top;
+}
+form#spamentry .meta th,
+form#spamentry .meta td,
+form#reportentry .meta th,
+form#reportentry .meta td { font-size: 90%; }
+form#spamentry pre,
+form#reportentry pre { background: #e6e6e6; border: 1px solid #666;
+  font-size: 90%; padding: .25em; width: 90%; overflow: auto;
+}
+
+input.spambutton {background-color: #f4d7d7}
+input.dangerbutton {background-color: #ff3737}
+input.hambutton {background-color: #d7f4d7}
+
+input.spambox {color: #f40710}
+input.hambox {color: #10a410}
+td.spambox {color: #f40710}
+td.hambox {color: #10a410}
+
+table#spamstatistics { width: auto; }
+
+table#spamstatistics th { text-align: center; vertical-align: middle; }
+
+table#spamstatistics td.text { text-align: center; color: white; }
+
+table#spamstatistics td.spampercent { text-align: right; }
+
+table#spamstatistics td.spamcount { text-align: right; }
+
+table#spamstatistics td.spamstatsbutton { padding: 0; }
+
+table#spamstatistics tr.strategyexternal { background: #c8cdf1; }
+
+table#spamstatistics tr.strategyinternal { background: #c8ecf1; }
+
+table#spamstatistics tbody td.mismatch { color: #e16464; }
+
+table#spamstatistics tbody td.error { color: #eb2f2f; font-weight: bold; }
+
+table#spamstatistics tbody td.sepcells { border-left: 2px solid rgb(221, 221, 221); }
+
+table#spamstatistics thead th.sepcells { border-left: 2px solid rgb(221, 221, 221); }
+
+table#userstatistics span.username { color: blue; }
+
+table#userstatistics span.doublemail { color: #e16464; }
+
+table#userstatistics td.active { background: #80FF80; }
+
+table#userstatistics td.inactive { background: yellow; }
+
+table#userstatistics td.asuser { background: #80FF80; }
+
+table#userstatistics td.asmail { background: yellow; }
+
+table#userstatistics td.asmailonly { background: #B0FFB0; }
+
+table#userstatistics td.asboth { background: yellow; }
+
+span.entryinfo { margin-left: 40px; }
+
+span.entrypassword { margin-left: 6px; font-size: 80%; }

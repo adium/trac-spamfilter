@@ -1,0 +1,156 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:i18n="http://genshi.edgewall.org/i18n" i18n:domain="tracspamfilter">
+  <xi:include href="admin.html" />
+  <head>
+    <title>Spam Statistics</title>
+  </head>
+
+  <body>
+    <h2>Spam Filtering: Statistics</h2>
+
+    <py:choose test="overall['test']">
+      <py:when test="0">
+        No submission statistics yet.
+      </py:when>
+      <py:otherwise>
+        <div i18n:msg="count, time, spam, ham, local">
+        ${overall['test']} Submissions tested since ${format_datetime(overall['time'])},
+        ${"%3.1f%%" % (100.0*overall['testspam']/overall['test'])} spam and
+        ${"%3.1f%%" % (100.0*overall['testham']/overall['test'])} ham
+        (${"%3.1f%%" % (100.0*overall['testint']/overall['test'])} of the tests could be solved local).
+        </div>
+      </py:otherwise>
+    </py:choose>
+
+    <table class="listing" id="spamstatistics">
+      <thead>
+        <tr>
+          <th rowspan="3">Strategy</th>
+          <th rowspan="3">Type</th>
+          <th colspan="7" class="sepcells">Test</th>
+          <th colspan="6" class="sepcells">Train / Verify</th>
+          <th rowspan="3" class="sepcells">Errors</th>
+          <th rowspan="3"></th>
+        </tr>
+        <tr>
+          <th colspan="3" class="sepcells"></th>
+          <th colspan="2">Spam</th>
+          <th colspan="2">Ham</th>
+          <th colspan="3" class="sepcells">Spam</th>
+          <th colspan="3" class="sepcells">Ham</th>
+        </tr>
+        <tr>
+          <th class="sepcells">Total</th>
+          <th>Mean Delay</th>
+          <th>No Result</th>
+          <th>Match</th>
+          <th>Mismatch</th>
+          <th>Match</th>
+          <th>Mismatch</th>
+          <th class="sepcells">Total</th>
+          <th>Right</th>
+          <th>Wrong</th>
+          <th class="sepcells">Total</th>
+          <th>Right</th>
+          <th>Wrong</th>
+        </tr>
+      </thead>
+      <tbody>
+        <py:for each="name, data in sorted(strategies.iteritems())">
+          <tr class="strategy${data['type']}">
+            <td>${name}</td><td>${data['i18type']}</td>
+          <py:choose test="data.get('testtotal',0)">
+            <py:when test="0"><td class="text sepcells" colspan="7">No tests yet.</td></py:when>
+            <py:otherwise>
+              <td class="spamcount sepcells">${data['testtotal']}</td>
+              <td class="spamcount" i18n:msg="seconds">${"%4.2f" % (data['testtime'])} s</td>
+              <td class="spampercent">
+                <py:if test="data.get('testempty',0)">
+                  ${"%3.1f%%" % (100.0*data['testempty']/data['testtotal'])}
+                </py:if>
+              </td>
+              <td class="spampercent">
+                <py:if test="data.get('testspamok',0)">
+                  ${"%3.1f%%" % (100.0*data['testspamok']/data['testtotal'])}
+                </py:if>
+              </td>
+              <td class="spampercent mismatch">
+                <py:if test="data.get('testspamerror',0)">
+                  ${"%3.1f%%" % (100.0*data['testspamerror']/data['testtotal'])}
+                </py:if>
+              </td>
+              <td class="spampercent">
+                <py:if test="data.get('testhamok',0)">
+                  ${"%3.1f%%" % (100.0*data['testhamok']/data['testtotal'])}
+                </py:if>
+              </td>
+              <td class="spampercent mismatch">
+                <py:if test="data.get('testhamerror',0)">
+                  ${"%3.1f%%" % (100.0*data['testhamerror']/data['testtotal'])}
+                </py:if>
+              </td>
+            </py:otherwise>
+          </py:choose>
+          <py:choose test="data.get('trainspamtotal',0)">
+            <py:when test="0"><td class="text sepcells" colspan="3">No spam yet.</td></py:when>
+            <py:otherwise>
+              <td class="spamcount sepcells">${data['trainspamtotal']}</td>
+              <td class="spampercent">
+                <py:if test="data.get('trainspamok',0)">
+                  ${"%3.1f%%" % (100.0*data['trainspamok']/data['traintotal'])}
+                </py:if>
+              </td>
+              <td class="spampercent ${'error' if data.get('trainspamok',0)
+              or 10*data.get('trainspamerror',0) > data.get('trainhamok',0) else
+              'mismatch'}">
+                <py:if test="data.get('trainspamerror',0)">
+                  ${"%3.1f%%" % (100.0*data['trainspamerror']/data['traintotal'])}
+                </py:if>
+              </td>
+            </py:otherwise>
+          </py:choose>
+          <py:choose test="data.get('trainhamtotal',0)">
+            <py:when test="0"><td class="text sepcells" colspan="3">No ham yet.</td></py:when>
+            <py:otherwise>
+              <td class="spamcount sepcells">${data['trainhamtotal']}</td>
+              <td class="spampercent">
+                <py:if test="data.get('trainhamok',0)">
+                  ${"%3.1f%%" % (100.0*data['trainhamok']/data['traintotal'])}
+                </py:if>
+              </td>
+              <td class="spampercent ${'error' if data.get('trainhamok',0)
+              or 10*data.get('trainhamerror',0) > data.get('trainspamok',0) else
+              'mismatch'}">
+                <py:if test="data.get('trainhamerror',0)">
+                  ${"%3.1f%%" % (100.0*data['trainhamerror']/data['traintotal'])}
+                </py:if>
+              </td>
+            </py:otherwise>
+          </py:choose>
+          <td class="spamcount sepcells error">${data.get('trainerror')}</td>
+          <td class="spamstatsbutton">
+            <form method="post" action="">
+              <div class="spamstatsbutton">
+                <input type="hidden" name="strategy" value="${name}" />
+                <input type="submit" name="clean" value="${_('Clear statistics')}" />
+              </div>
+            </form>
+          </td></tr>
+        </py:for>
+      </tbody>
+    </table>
+
+    <form method="post" action="">
+      <div class="buttons">
+        <input type="submit" name="cleanall" value="${_('Clear statistics database')}" />
+      </div>
+    </form>
+
+  </body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:i18n="http://genshi.edgewall.org/i18n" i18n:domain="tracspamfilter">
+  <xi:include href="admin.html" />
+  <head>
+    <title>Spam User Handling</title>
+  </head>
+
+  <body>
+    <h2 i18n:msg="type, count">Spam Filtering: User handling (${usertype})
+       <span class="entryinfo" py:if="stats">${entrytext}</span>
+    </h2>
+
+    <div class="nav">
+      <ul>
+        <li class="first"><a href="user?mode=overview">Overview</a></li>
+        <li><a href="user?mode=all">All</a></li>
+        <li><a href="user?mode=authorized">Registered</a></li>
+        <li class="last"><a href="user?mode=unused">Unused</a></li>
+      </ul>
+    </div>
+
+    <div py:if="stats" i18n:msg="total, registered, unused">There are ${stats['numtotal']}
+    different entries in the database, ${stats['numauthorized']} users are
+    registered and ${stats['numunused']} have not been used.</div>
+
+    <table class="listing" id="userinfo" py:if="username">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th i18n:msg="username">Action of user '${username}'</th>
+        </tr>
+      </thead>
+      <tbody>
+        <py:for each="date, link, action in user">
+          <tr>
+            <td>${format_datetime(date) if date else "-"}</td>
+            <td py:if="link"><a href="${link}">${action}</a></td>
+            <td py:if="not link">${action}</td>
+          </tr>
+        </py:for>
+      </tbody>
+    </table>
+    <table class="listing" id="userstatistics" py:if="len(users)">
+      <thead>
+        <tr>
+          <th>User name</th>
+          <th>Last login</th>
+          <th>Registered</th>
+          <th>Setup</th>
+          <th>E-Mail</th>
+          <th>Wiki edits</th>
+          <th>Ticket edits</th>
+          <th>SVN edits</th>
+          <th>Other</th>
+          <th py:if="accmgr and mode == 'unused'">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <py:for each="name, data in sorted(users.iteritems())">
+          <tr>
+            <td>
+              <a href="user?mode=user&amp;user=${quote(name.encode('utf-8'))}">${name}</a>
+              <span class="username" py:if="data[12]">(${data[12]})</span>
+            </td>
+            <py:if test="data[0]">
+              <py:choose test="data[1]">
+                <py:when test="0">
+                  <td><a href="${data[0]}">Source</a></td>
+                </py:when>
+                <py:otherwise>    
+                  <td class="${'inactive' if curtime-data[0] > maxage else 'active'}">${format_datetime(data[0])}</td>
+                </py:otherwise>
+              </py:choose>
+            </py:if>
+            <py:if test="not data[0]"><td>-</td></py:if>
+            <py:if test="data[1]"><td class="active">yes</td></py:if>
+            <py:if test="not data[1]"><td>no</td></py:if>
+            <py:if test="data[2]"><td class="active">yes<span class="entrypassword" py:if="data[14]">(password)</span></td></py:if>
+            <py:if test="not data[2]"><td>no<span class="entrypassword" py:if="data[14]">(password)</span></td></py:if>
+            <td>${data[3] if data[3] else '-'}
+              <py:if test="data[13]"><span class="doublemail" title="${data[13]}"> (double)</span></py:if>
+            </td>
+            <py:choose test="data[4]">
+              <py:when test="1"><td class="asuser">user <py:if test="data[5]"> (${data[5]})</py:if></td></py:when>
+              <py:when test="2"><td class="${'asmailonly' if data[3] == name else 'asmail'}">e-mail <py:if test="data[5]"> (${data[5]})</py:if></td></py:when>
+              <py:when test="3"><td class="asboth">both <py:if test="data[5]"> (${data[5]})</py:if></td></py:when>
+              <py:otherwise><td>-</td></py:otherwise>
+            </py:choose>
+            <py:choose test="data[6]">
+              <py:when test="1"><td class="asuser">user <py:if test="data[7]"> (${data[7]})</py:if></td></py:when>
+              <py:when test="2"><td class="${'asmailonly' if data[3] == name else 'asmail'}">e-mail <py:if test="data[7]"> (${data[7]})</py:if></td></py:when>
+              <py:when test="3"><td class="asboth">both <py:if test="data[7]"> (${data[7]})</py:if></td></py:when>
+              <py:otherwise><td>-</td></py:otherwise>
+            </py:choose>
+            <py:choose test="data[8]">
+              <py:when test="1"><td class="asuser">user <py:if test="data[9]"> (${data[9]})</py:if></td></py:when>
+              <py:when test="2"><td class="${'asmailonly' if data[3] == name else 'asmail'}">e-mail <py:if test="data[9]"> (${data[9]})</py:if></td></py:when>
+              <py:when test="3"><td class="asboth">both <py:if test="data[9]"> (${data[9]})</py:if></td></py:when>
+              <py:otherwise><td>-</td></py:otherwise>
+            </py:choose>
+            <py:choose test="data[10]">
+              <py:when test="1"><td class="asuser">user <py:if test="data[11]"> (${data[11]})</py:if></td></py:when>
+              <py:when test="2"><td class="asmail">e-mail <py:if test="data[11]"> (${data[11]})</py:if></td></py:when>
+              <py:when test="3"><td class="asboth">both <py:if test="data[11]"> (${data[11]})</py:if></td></py:when>
+              <py:otherwise><td>-</td></py:otherwise>
+            </py:choose>
+            <td py:if="accmgr and mode == 'unused'">
+              <py:if test="not curtime-data[0] > maxage">&nbsp;</py:if>
+              <form py:if="curtime-data[0] > maxage" action="/admin/accounts/users" method="post">
+                <div>
+                  <input type="hidden" name="sel" value="${name}" />
+                  <input class="dangerbutton" type="submit" name="remove" value="${_('Remove')}" />
+                </div>
+              </form>
+            </td>
+          </tr>
+        </py:for>
+      </tbody>
+    </table>
+
+    <form method="post" action="">
+      <h4 py:if="encoded">Values must be URL encoded!</h4>
+      <div class="buttons">
+        <label>Old user:
+          <input type="text" id="userold" name="userold" size="30" value="" />
+        </label>
+        <label>New user:
+           <input type="text" id="usernew" name="usernew" size="30" value="" />
+        </label>
+        <input type="hidden" name="mode" value="$mode" />
+        <input py:if="encoded" type="hidden" name="encoded" value="1" />
+        <input py:if="auth" type="hidden" name="auth" value="$auth" />
+        <input type="submit" name="changeuser" value="${_('Change unauthorized user') if not auth else _('Change user')}" />
+      </div>
+    </form>
+
+    <div class="buttons">
+      <form method="post" action=""><div>
+        <input type="hidden" name="mode" value="$mode" />
+        <input type="submit" name="cleantemp" value="${ngettext('Remove %(num)d temporary session',
+        'Remove %(num)s temporary sessions', tempcount)}" />
+      </div></form>
+      <form method="post" action=""><div>
+        <input type="hidden" name="mode" value="$mode" />
+        <input type="submit" name="fixemails" value="${_('Convert emails to registered usernames')}" />
+      </div></form>
+    </div>
+
+  </body>
+
+</html>

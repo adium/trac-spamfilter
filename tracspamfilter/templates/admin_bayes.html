@@ -1,0 +1,79 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:i18n="http://genshi.edgewall.org/i18n" i18n:domain="tracspamfilter">
+  <xi:include href="admin.html" />
+  <head>
+    <title>Bayes</title>
+  </head>
+
+  <body>
+    <h2>Spam Filtering: Bayes</h2>
+
+    <form class="mod" id="spamconfig" method="post" action="">
+
+      <fieldset>
+        <legend>Configuration</legend>
+        <p i18n:msg="numspam,numham,ratio">The bayesian filter requires training before it can effectively
+        differentiate between spam and ham. The training database currently
+        contains <strong>${nspam} spam</strong> and
+        <strong>${nham} ham</strong> ${ratio} submissions.</p>
+        <div class="field">
+          <label><input type="checkbox" id="reset" name="reset"
+                        disabled="${nham + nspam == 0 or None}" />
+            Clear training database
+          </label>
+          <p class="hint">
+            Resetting the training database can help when training was incorrect
+            and is producing bad results.
+          </p>
+        </div>
+        <div class="field">
+          <label>Minimum training required:
+            <input type="text" id="min_training" name="min_training" size="3"
+                   value="${min_training}" />
+          </label>
+          <p class="hint">
+            The minimum number of spam and ham in the training database before
+            the filter starts affecting the karma of submissions.
+          </p>
+        </div>
+        <div class="buttons">
+          <input type="submit" value="${_('Apply changes')}" />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Training</legend>
+        <p class="hint" i18n:msg="">
+          While you can train the spam filter from the &ldquo;<em>Spam
+          Filtering &rarr; Monitoring</em>&rdquo; panel in the web
+          administration interface, you can also manually train the filter by
+          entering samples here, or check what kind of spam probability
+          currently gets assigned to the content.
+        </p>
+        <div class="field">
+          <label for="content">Content:</label><br />
+          <textarea id="bayes_content" name="bayes_content" rows="10" cols="60">
+${content}</textarea>
+        </div>
+        <div py:if="content" class="field" py:choose="">
+          <strong py:when="error" i18n:msg="error">Error: ${error}</strong>
+          <strong py:otherwise="" i18n:msg="score">Score: ${round(score * 100, 2)}%</strong>
+        </div>
+        <div class="buttons">
+          <input type="submit" name="test" value="${_('Test')}"
+                 disabled="${(not nham or not nspam) or None}" />
+          <input type="submit" name="train" value="${_('Train as Spam')}" />
+          <input type="submit" name="train" value="${_('Train as Ham')}" />
+        </div>
+      </fieldset>
+
+    </form>
+
+  </body>
+
+</html>

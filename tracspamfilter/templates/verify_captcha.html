@@ -1,0 +1,33 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:i18n="http://genshi.edgewall.org/i18n" i18n:domain="tracspamfilter">
+  <xi:include href="layout.html" />
+  <head></head>
+  <body>
+    <div id="content" class="${error and 'error' or 'traccaptcha'}">
+      <py:if test="error">
+        <h1>Captcha Error</h1>
+        <div class="message">${error}</div>
+      </py:if>
+      <form method="post" action="${href.captcha()}">
+        <p>Trac thinks your submission might be Spam.
+           To prove otherwise please provide a response to the following.</p>
+        <p py:if="random">Note - the captcha method is choosen randomly. Retry if the captcha does not work on your system!</p>
+        <py:if test="defaultform">
+           <blockquote><p>${challenge}</p></blockquote>
+           <p>
+           Response: <input type="text" name="captcha_response"/>
+                  <input type="submit" value="${_('Submit')}"/>
+           </p>
+        </py:if>
+        <py:if test="not defaultform">
+            ${challenge}
+        </py:if>
+      </form>
+    </div>
+  </body>
+</html>

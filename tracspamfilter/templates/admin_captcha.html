@@ -1,0 +1,207 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:i18n="http://genshi.edgewall.org/i18n" i18n:domain="tracspamfilter">
+  <xi:include href="admin.html" />
+  <head>
+    <title>Captcha handling</title>
+  </head>
+
+  <body>
+    <h2>Spam Filtering: Captcha handling</h2>
+
+    <form class="mod" id="spamconfig" method="post" action="">
+      <div class="field">
+        <label>
+          <input type="checkbox" id="captcha_enabled" name="captcha_enabled"
+                 checked="${captcha_enabled or None}" />
+          Enable captcha usage
+        </label>
+      </div>
+
+      <div id="captcha_block">
+
+      <div class="field">
+        Captcha type:
+        <select name="captcha">
+            <py:for each="type in types">
+                <py:choose>
+                    <option value="${type}" selected="selected"
+                        py:when="captcha == type">${type}</option>
+                    <option value="${type}" py:otherwise="">${type}</option>
+                </py:choose>
+            </py:for>
+        </select>
+      </div>
+
+      <div class="field">
+          <label>Maximum captcha lifetime in seconds
+              <input type="text" id="captcha_karma_lifetime"
+                   name="captcha_karma_lifetime" size="7"
+                   value="${captcha_karma_lifetime}" />
+          </label>
+      </div>
+
+      <fieldset>
+        <legend>reCAPTCHA</legend>
+        <p class="hint" i18n:msg="">
+          The reCAPTCHA system provides a very good captcha system based on
+          scanned books. See
+          <a class="ext-link" href="http://www.google.com/recaptcha">Google
+          reCAPTCHA</a> page. You need to obtain
+          API keys to use the service, which is freely available for personal use.
+        </p>
+        <div class="field">
+          <table>
+            <tr><td>Public key:</td><td>
+              <input type="text" id="captcha_recaptcha_public_key"
+                 name="captcha_recaptcha_public_key" size="50"
+                 value="${captcha_recaptcha_public_key}" />
+            </td></tr>
+            <tr><td>Private key:</td><td>
+              <input type="text" id="captcha_recaptcha_private_key"
+                 name="captcha_recaptcha_private_key" size="50"
+                 value="${captcha_recaptcha_private_key}" />
+            </td></tr>
+          </table>
+        </div>
+
+        <div py:if="recaptchaerror" class="system-message">
+          <strong>Key validation failed:</strong> ${recaptchaerror}
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>KeyCaptcha</legend>
+        <p class="hint" i18n:msg="">
+          The KeyCatcha system provides a captcha system based on JavaScript
+          functions to reassemble a picture. See
+          <a class="ext-link" href="http://www.keycaptcha.com">KeyCaptcha</a>
+          page. You need to obtain an API key to use the service, which is
+          freely available for limited use.
+        </p>
+        <div class="field">
+          <table>
+            <tr><td>User ID:</td><td>
+              <input type="text" id="captcha_keycaptcha_user_id"
+                 name="captcha_keycaptcha_user_id" size="50"
+                 value="${captcha_keycaptcha_user_id}" />
+            </td></tr>
+            <tr><td>Private key:</td><td>
+              <input type="text" id="captcha_keycaptcha_private_key"
+                 name="captcha_keycaptcha_private_key" size="50"
+                 value="${captcha_keycaptcha_private_key}" />
+            </td></tr>
+          </table>
+        </div>
+
+        <div py:if="keycaptchaerror" class="system-message">
+          <strong>Key validation failed:</strong> ${keycaptchaerror}
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Are You A Human</legend>
+        <p class="hint" i18n:msg="">
+          The Are You A Human system provides a captcha system based on JavaScript
+          and Flash functions to play a little game. See
+          <a class="ext-link"  href="http://www.areyouahuman.com">AreYouAHuman</a>
+          page. You need to obtain API keys to use the service, which are
+          freely available for limited use.
+        </p>
+        <p>
+          NOTE: You need to change the game style from 'Lightbox' to
+          'Embedded' in the AreYouAHuman server settings to allow usage with
+          this spam filter.
+        </p>
+        <div class="field">
+          <table>
+            <tr><td>Publisher key:</td><td>
+              <input type="text" id="captcha_areyouahuman_publisher_key"
+                 name="captcha_areyouahuman_publisher_key" size="50"
+                 value="${captcha_areyouahuman_publisher_key}" />
+            </td></tr>
+            <tr><td>Scoring key:</td><td>
+              <input type="text" id="captcha_areyouahuman_scoring_key"
+                 name="captcha_areyouahuman_scoring_key" size="50"
+                 value="${captcha_areyouahuman_scoring_key}" />
+            </td></tr>
+          </table>
+        </div>
+
+        <div py:if="areyouahumanerror" class="system-message">
+          <strong>Key validation failed:</strong> ${areyouahumanerror}
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Text captcha</legend>
+        <p class="hint">
+          The text captcha constructs easy text questions. They can be
+          broken relatively easy.
+        </p>
+        <div class="field">
+          <table>
+            <tr><td>Maximum value in a term:</td><td>
+              <input type="text" id="captcha_expression_ceiling"
+                   name="captcha_expression_ceiling" size="7"
+                   value="${captcha_expression_ceiling}" />
+            </td></tr>
+            <tr><td>Number of terms:</td><td>
+              <input type="text" id="captcha_expression_terms"
+                   name="captcha_expression_terms" size="7"
+                   value="${captcha_expression_terms}" />
+            </td></tr>
+          </table>
+        </div>
+      </fieldset>
+
+      <fieldset py:if="imagecaptcha">
+        <legend>Image captcha</legend>
+        <p class="hint">
+          The image captcha constructs obstructed images using Python
+          imaging library.
+        </p>
+        <div class="field">
+          <table>
+            <tr><td>Number of letters:</td><td>
+              <input type="text" id="captcha_image_letters"
+                   name="captcha_image_letters" size="7"
+                   value="${captcha_image_letters}" />
+            </td></tr>
+            <tr><td>Font size:</td><td>
+              <input type="text" id="captcha_image_font_size"
+                   name="captcha_image_font_size" size="7"
+                   value="${captcha_image_font_size}" />
+            </td></tr>
+            <tr><td>Alphabet:</td><td>
+              <input type="text" id="captcha_image_alphabet"
+                   name="captcha_image_alphabet" size="100"
+                   value="${captcha_image_alphabet}" />
+            </td></tr>
+            <tr><td>Fonts:</td><td>
+              <input type="text" id="captcha_image_fonts"
+                   name="captcha_image_fonts" size="100"
+                   value="${captcha_image_fonts}" />
+            </td></tr>
+          </table>
+        </div>
+      </fieldset>
+
+      <div py:if="unknownsourceerror" class="system-message">
+        <strong>Data validation failed:</strong> ${unknownsourceerror}
+      </div>
+      </div>
+
+      <div class="buttons">
+        <input type="submit" value="${_('Apply changes')}" />
+        <input py:if="error" type="submit" name="cancel" value="${_('Revert changes')}" />
+      </div>
+    </form>
+
+  </body>
+
+</html>

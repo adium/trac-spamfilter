@@ -1,0 +1,2143 @@
+# Korean translations for TracSpamFilter.
+# Copyright (C) 2014 ORGANIZATION
+# This file is distributed under the same license as the TracSpamFilter
+# project.
+#
+# Translators:
+# theYT <dev@theYT.net>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Trac Plugin L10N\n"
+"Report-Msgid-Bugs-To: trac@dstoecker.de\n"
+"POT-Creation-Date: 2014-11-15 22:01+0100\n"
+"PO-Revision-Date: 2014-11-14 02:17+0000\n"
+"Last-Translator: theYT <dev@theYT.net>\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/Trac_Plugin-"
+"L10N/language/ko/)\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+#: tracspamfilter/accountadapter.py:30
+msgid ""
+"Interface of spamfilter to account manager plugin to check new account\n"
+"registrations for spam.\n"
+"\n"
+"It provides an additional 'Details' input field to get more information\n"
+"for calculating the probability of a spam registration attempt.\n"
+"Knowledge gained from inspecting registration attempts is shared with all"
+"\n"
+"other spam filter adapters for this system."
+msgstr ""
+"신규 가입 과정에서 스팸을 검사하기 위한, 사용자 계정 플러그인에 대한 스팸 필터 인터페이스입니다.\n"
+"\n"
+"스팸의 등록 시도 가능성을 계산하기 위한 추가 정보를 얻기 위하여, '상세 내용' 입력 필드를 추가합니다.\n"
+"등록 시도를 검사하여 얻은 정보는 시스템에 있는 다른 모든 스팸 필터 어댑터와 공유됩니다."
+
+#: tracspamfilter/accountadapter.py:44
+msgid "Details:"
+msgstr "상세 내용:"
+
+#: tracspamfilter/adapters.py:106
+msgid ""
+"The maximum number of bytes from an attachment to pass through\n"
+"the spam filters."
+msgstr "스팸 필터로 전달할 첨부 파일의 최대 바이트 수입니다."
+
+#: tracspamfilter/admin.py:68
+msgid "How many monitor entries are displayed by default (between 5 and 10000)."
+msgstr "몇 개의 감시 항목을 기본으로 표시할지를 지정합니다 (5에서 10000 사이)."
+
+#: tracspamfilter/admin.py:72
+msgid "Show the buttons for training without deleting entry."
+msgstr "항목을 지우지 않고 학습시키는 버튼을 표시할 지 여부입니다."
+
+#: tracspamfilter/admin.py:80 tracspamfilter/admin.py:83
+#: tracspamfilter/admin.py:321 tracspamfilter/admin.py:480
+#: tracspamfilter/admin.py:546 tracspamfilter/admin.py:580
+#: tracspamfilter/adminreport.py:39 tracspamfilter/adminusers.py:47
+msgid "Spam Filtering"
+msgstr "스팸 필터링"
+
+#: tracspamfilter/admin.py:81 tracspamfilter/templates/admin_bayes.html:19
+msgid "Configuration"
+msgstr "설정"
+
+#: tracspamfilter/admin.py:84
+msgid "Monitoring"
+msgstr "감시"
+
+#: tracspamfilter/admin.py:106 tracspamfilter/filters/bayes.py:78
+#, python-format
+msgid "SpamBayes determined spam probability of %s%%"
+msgstr "베이즈 스팸 필터가 %s%% 확률로 스팸이라고 판단함"
+
+#: tracspamfilter/admin.py:107
+#, python-format
+msgid "Select 100.00%% entries"
+msgstr "100.00%% 항목 선택"
+
+#: tracspamfilter/admin.py:108
+#, python-format
+msgid "Select &gt;90.00%% entries"
+msgstr "90.00%% 초과 항목 선택"
+
+#: tracspamfilter/admin.py:109
+#, python-format
+msgid "Select &lt;10.00%% entries"
+msgstr "10.00%% 미만 항목 선택"
+
+#: tracspamfilter/admin.py:110
+#, python-format
+msgid "Select 0.00%% entries"
+msgstr "0.00%% 항목 선택"
+
+#: tracspamfilter/admin.py:111
+msgid "Select Spam entries"
+msgstr "스팸 항목 선택"
+
+#: tracspamfilter/admin.py:112
+msgid "Select Ham entries"
+msgstr "햄(유효) 항목 선택"
+
+#: tracspamfilter/admin.py:253 tracspamfilter/adminreport.py:106
+#: tracspamfilter/templates/admin_report.html:26
+#: tracspamfilter/templates/admin_report.html:27
+#: tracspamfilter/templates/admin_spammonitor.html:29
+#: tracspamfilter/templates/admin_spammonitor.html:30
+msgid "Previous Page"
+msgstr "이전 페이지"
+
+#: tracspamfilter/admin.py:257 tracspamfilter/adminreport.py:110
+#: tracspamfilter/templates/admin_report.html:32
+#: tracspamfilter/templates/admin_report.html:33
+#: tracspamfilter/templates/admin_spammonitor.html:35
+#: tracspamfilter/templates/admin_spammonitor.html:36
+msgid "Next Page"
+msgstr "다음 페이지"
+
+#: tracspamfilter/admin.py:274
+msgid "Log entry not found"
+msgstr "로그 항목이 없습니다."
+
+#: tracspamfilter/admin.py:279 tracspamfilter/admin.py:284
+#, python-format
+msgid "Log Entry %d"
+msgstr "로그 항목 %d"
+
+#: tracspamfilter/admin.py:280
+msgid "Log Entry List"
+msgstr "로그 항목 목록"
+
+#: tracspamfilter/admin.py:321
+msgid "External"
+msgstr "외부 필터"
+
+#: tracspamfilter/admin.py:480 tracspamfilter/templates/admin_bayes.html:10
+msgid "Bayes"
+msgstr "베이즈 필터"
+
+#: tracspamfilter/admin.py:522
+#, python-format
+msgid "(ratio %.1f : 1)"
+msgstr "(비율 %.1f : 1)"
+
+#: tracspamfilter/admin.py:524
+#, python-format
+msgid "(ratio 1 : %.1f)"
+msgstr "(비율 1 : %.1f)"
+
+#: tracspamfilter/admin.py:546
+msgid "Statistics"
+msgstr "통계"
+
+#: tracspamfilter/admin.py:580
+msgid "Captcha"
+msgstr "보안 문자"
+
+#: tracspamfilter/admin.py:620
+msgid "Lifetime has invalid value"
+msgstr "유효 시간 값이 올바르지 않습니다."
+
+#: tracspamfilter/admin.py:626
+msgid "Text values are not numeric"
+msgstr "수식 보안 문자에 대해 지정한 값이 숫자가 아닙니다."
+
+#: tracspamfilter/admin.py:633
+msgid "Numeric image values are no numbers"
+msgstr "숫자 이미지에 대해 지정한 값이 숫자가 아닙니다."
+
+#: tracspamfilter/admin.py:638 tracspamfilter/admin.py:646
+msgid "The keys are invalid"
+msgstr "키가 올바르지 않습니다."
+
+#: tracspamfilter/admin.py:642
+msgid "The key or user id are invalid"
+msgstr "키 또는 사용자 아이디가 올바르지 않습니다."
+
+#: tracspamfilter/adminreport.py:28
+msgid "How many report entries are displayed by default (between 5 and 10000)."
+msgstr "몇 개의 신고 항목을 기본으로 표시할지를 지정합니다 (5에서 10000 사이)."
+
+#: tracspamfilter/adminreport.py:39
+msgid "Reports"
+msgstr "스팸 신고"
+
+#: tracspamfilter/adminreport.py:130
+msgid "Report entry not found"
+msgstr "신고된 항목이 없습니다."
+
+#: tracspamfilter/adminreport.py:138 tracspamfilter/adminreport.py:145
+#, python-format
+msgid "Report Entry %d"
+msgstr "신고 항목 %d"
+
+#: tracspamfilter/adminreport.py:139
+msgid "Report Entry List"
+msgstr "신고 항목 목록"
+
+#: tracspamfilter/adminusers.py:28
+msgid "How many wiki edits are still an unused account."
+msgstr "위키 수정 횟수가 해당 값 이하이면 사용되지 않은 계정으로 간주합니다."
+
+#: tracspamfilter/adminusers.py:32
+msgid "How many days no login are considered for dead accounts."
+msgstr "해당 날 수만큼 로그인 하지 않으면 비활성 계정으로 처리합니다."
+
+#: tracspamfilter/adminusers.py:37
+msgid "Default mode for spam user admin panel."
+msgstr "스팸 사용자 관리 패널의 기본 모드입니다."
+
+#: tracspamfilter/adminusers.py:47
+msgid "Users"
+msgstr "사용자"
+
+#: tracspamfilter/adminusers.py:57
+msgid "Old or new value cannot be empty"
+msgstr "이전 및 새 값을 입력해야 합니다."
+
+#: tracspamfilter/adminusers.py:65
+msgid "Old and new value cannot be equal"
+msgstr "이전과 새 값은 같지 않아야 합니다."
+
+#: tracspamfilter/adminusers.py:68
+msgid "New name cannot be used in CC fields"
+msgstr "새 이름이 참조 필드에 사용되어서는 안됩니다."
+
+#: tracspamfilter/adminusers.py:70
+msgid "Illegal user arguments passed or changing not allowed"
+msgstr "전달된 사용자 인수가 올바르지 않거나, 변경이 허용되지 않습니다."
+
+#: tracspamfilter/adminusers.py:72
+#, python-format
+msgid "%(num)d entry has been updated"
+msgid_plural "%(num)d entries have been updated"
+msgstr[0] "%(num)d 항목을 변경하였습니다."
+
+#: tracspamfilter/adminusers.py:79
+#, python-format
+msgid "Username '%s' cannot be used in CC fields"
+msgstr "사용자 이름 '%s'이(가) 참조 필드에 사용되어서는 안됩니다."
+
+#: tracspamfilter/adminusers.py:81
+#, python-format
+msgid "Error for e-mail change for username '%s'"
+msgstr "사용자 이름 '%s'에 대한 메일 주소 변경을 실패하였습니다."
+
+#: tracspamfilter/adminusers.py:83
+#, python-format
+msgid "%(num)d entry has been updated for user %(user)s"
+msgid_plural "%(num)d entries have been updated for user %(user)s"
+msgstr[0] "%(user)s 사용자에 대한 %(num)d 개 항목을 변경하였습니다."
+
+#: tracspamfilter/adminusers.py:86
+#, python-format
+msgid "E-mails for user %s updated"
+msgstr "%s 사용자의 메일 주소를 변경하였습니다."
+
+#: tracspamfilter/adminusers.py:117
+msgid "data overview"
+msgstr "데이터 개요"
+
+#: tracspamfilter/adminusers.py:119
+msgid "unused accounts"
+msgstr "비활성 계정"
+
+#: tracspamfilter/adminusers.py:121
+msgid "registered accounts"
+msgstr "등록된 계정"
+
+#: tracspamfilter/adminusers.py:123
+#, python-format
+msgid "detailed user information for '%s'"
+msgstr "'%s' 사용자에 대한 상세 정보"
+
+#: tracspamfilter/adminusers.py:125
+msgid "everything from accounts, wiki, tickets and svn"
+msgstr "사용자 계정, 위키, 티켓, SVN에 존재하는 모든 사용자"
+
+#: tracspamfilter/adminusers.py:126
+#, python-format
+msgid "%(num)d entry"
+msgid_plural "%(num)d entries"
+msgstr[0] "%(num)d 개 항목"
+
+#: tracspamfilter/filtersystem.py:54
+msgid "The minimum score required for a submission to be allowed."
+msgstr "제출된 내용을 승인하는 데 필요한 최소 점수입니다."
+
+#: tracspamfilter/filtersystem.py:58
+msgid ""
+"The karma given to authenticated users, in case\n"
+"`trust_authenticated` is false."
+msgstr "`trust_authenticated`가 false로 설정되었을 때, 인증된 사용자에게 부여할 점수입니다."
+
+#: tracspamfilter/filtersystem.py:62
+msgid ""
+"Whether all content submissions and spam filtering activity should\n"
+"be logged to the database."
+msgstr "제출된 모든 내용과 스팸 필터링 활동이 데이터베이스에 기록되어야 하는지 여부입니다."
+
+#: tracspamfilter/filtersystem.py:66
+msgid "The number of days after which log entries should be purged."
+msgstr "지정한 날 수가 지난 로그 항목을 지웁니다."
+
+#: tracspamfilter/filtersystem.py:70
+msgid "Allow usage of external services."
+msgstr "외부 서비스의 사용을 허용합니다."
+
+#: tracspamfilter/filtersystem.py:73
+msgid ""
+"Skip external calls when this negative karma is already reached\n"
+"by internal tests."
+msgstr "내부 테스트에 의한 점수가 음의 값으로 이 값에 도달하면 외부 서비스를 통과합니다."
+
+#: tracspamfilter/filtersystem.py:77
+msgid ""
+"Skip external calls when this positive karma is already reached\n"
+"by internal tests."
+msgstr "내부 테스트에 의한 점수가 양의 값으로 이 값에 도달하면 외부 서비스를 통과합니다."
+
+#: tracspamfilter/filtersystem.py:81
+msgid "Stop external calls when this negative karma is reached."
+msgstr "점수가 음의 값으로 이 값에 도달하면 외부 서비스의 사용을 멈춥니다."
+
+#: tracspamfilter/filtersystem.py:85
+msgid "Stop external calls when this positive karma is reached."
+msgstr "점수가 양의 값으로 이 값에 도달하면 외부 서비스의 사용을 멈춥니다."
+
+#: tracspamfilter/filtersystem.py:89
+msgid "Allow training of external services."
+msgstr "외부 서비스에 대해 학습을 허용합니다."
+
+#: tracspamfilter/filtersystem.py:92
+msgid ""
+"Whether content submissions by authenticated users should be trusted\n"
+"without checking for potential spam or other abuse."
+msgstr "인증 사용자에 대해, 잠재적인 스팸이나 오용 행위에 대한 확인 없이 제출된 내용을 신뢰할 지 여부입니다."
+
+#: tracspamfilter/filtersystem.py:98
+msgid "The karma given to attachments."
+msgstr "첨부 파일에 대해 부여할 점수입니다."
+
+#: tracspamfilter/filtersystem.py:101
+msgid "The handler used to reject content."
+msgstr "내용을 거부하는 데 사용할 처리기입니다."
+
+#: tracspamfilter/filtersystem.py:105
+msgid "Interpret X-Forwarded-For header for IP checks."
+msgstr "IP 검사를 위해 X-Forwarded-For 헤더를 해석합니다."
+
+#: tracspamfilter/filtersystem.py:109
+msgid ""
+"This section is used to handle all configurations used by\n"
+"spam filter plugin."
+msgstr "이 구역은 스팸 필터 플러그인에 대한 모든 설정을 다룹니다."
+
+#: tracspamfilter/filtersystem.py:164
+msgid "User is authenticated"
+msgstr "사용자가 인증됨"
+
+#: tracspamfilter/filtersystem.py:169
+msgid "Attachment weighting"
+msgstr "첨부 파일 가중치"
+
+#: tracspamfilter/filtersystem.py:291
+#, python-format
+msgid "Submission rejected as potential spam %(message)s"
+msgstr "제출된 내용이 스팸으로 판단되어 거부되었습니다: %(message)s"
+
+#: tracspamfilter/model.py:423
+msgid "external"
+msgstr "외부"
+
+#: tracspamfilter/model.py:423
+msgid "internal"
+msgstr "내부"
+
+#: tracspamfilter/report.py:28
+msgid "List of page types to add spam report link"
+msgstr "스팸 신고 링크를 표시할 페이지 종류"
+
+#: tracspamfilter/report.py:40
+msgid "Missing permissions to report spam"
+msgstr "스팸을 신고할 수 있는 권한이 없습니다."
+
+#: tracspamfilter/report.py:42
+msgid "No page supplied to report as spam"
+msgstr "스팸 신고할 페이지를 지정하지 않았습니다."
+
+#: tracspamfilter/report.py:74
+msgid "Reported spam"
+msgstr "스팸 신고함"
+
+#: tracspamfilter/report.py:76
+msgid "Comment"
+msgstr "설명"
+
+#: tracspamfilter/report.py:78
+msgid "Report spam"
+msgstr "스팸 신고"
+
+#: tracspamfilter/report.py:82
+#, python-format
+msgid "%(num)d spam report"
+msgid_plural "%(num)d spam reports"
+msgstr[0] "스팸 신고가 %(num)d 개 들어왔습니다."
+
+#: tracspamfilter/users.py:37
+#, python-format
+msgid "Wiki page '%(page)s' version %(version)s modified"
+msgstr "위키 페이지 '%(page)s'의 버전 %(version)s을(를) 변경함"
+
+#: tracspamfilter/users.py:40
+#, python-format
+msgid "Attachment '%s' added"
+msgstr "첨부 파일 '%s'을(를) 추가함"
+
+#: tracspamfilter/users.py:44
+#, python-format
+msgid "Ticket %(id)s field '%(field)s' changed"
+msgstr "티켓 %(id)s의 '%(field)s' 필드를 변경함"
+
+#: tracspamfilter/users.py:47
+#, python-format
+msgid "Removed from ticket %(id)s field '%(field)s' ('%(old)s' --> '%(new)s')"
+msgstr "티켓 %(id)s의 '%(field)s' 필드에서 제거됨 ('%(old)s' → '%(new)s')"
+
+#: tracspamfilter/users.py:49
+#, python-format
+msgid "Set in ticket %(id)s field '%(field)s' ('%(old)s' --> '%(new)s')"
+msgstr "티켓 %(id)s의 '%(field)s' 필드에 설정됨 ('%(old)s' → '%(new)s')"
+
+#: tracspamfilter/users.py:55
+#, python-format
+msgid "Ticket %(id)s CC field change ('%(old)s' --> '%(new)s')"
+msgstr "티켓 %(id)s의 참조 필드가 변경됨 ('%(old)s' → '%(new)s')"
+
+#: tracspamfilter/users.py:59
+#, python-format
+msgid "Reporter of ticket %s"
+msgstr "티켓 %s의 작성자"
+
+#: tracspamfilter/users.py:61
+#, python-format
+msgid "Owner of ticket %s"
+msgstr "티켓 %s의 소유자"
+
+#: tracspamfilter/users.py:63
+#, python-format
+msgid "In CC of ticket %(id)s ('%(cc)s')"
+msgstr "티켓 %(id)s의 참조에 포함됨 ('%(cc)s')"
+
+#: tracspamfilter/users.py:66
+#, python-format
+msgid "Author of revision %s"
+msgstr "리비전 %s의 작성자"
+
+#: tracspamfilter/users.py:69
+#, python-format
+msgid "Component '%s' owner"
+msgstr "컴포넌트 '%s'의 소유자"
+
+#: tracspamfilter/users.py:72
+msgid "In permissions list"
+msgstr "권한 목록에 포함됨"
+
+#: tracspamfilter/users.py:75
+#, python-format
+msgid "Author of report %d"
+msgstr "보고서 %d의 작성자"
+
+#: tracspamfilter/users.py:80 tracspamfilter/users.py:84
+#, python-format
+msgid "Voted for '%s'"
+msgstr "'%s'에 대해 투표함"
+
+#: tracspamfilter/captcha/api.py:50
+msgid "CAPTCHA method to use for verifying humans."
+msgstr "사람임을 확인하기 위해 사용할 보안 문자 방식입니다."
+
+#: tracspamfilter/captcha/api.py:55
+msgid ""
+"By how many points a successful CAPTCHA response increases the\n"
+"overall score."
+msgstr "보안 문자 대답이 올바를 때 더할 점수입니다."
+
+#: tracspamfilter/captcha/api.py:60
+msgid "By how many points a failed CAPTCHA impacts the overall score."
+msgstr "보안 문자 테스트를 실패했을 때 차감할 점수입니다."
+
+#: tracspamfilter/captcha/api.py:64
+msgid ""
+"Time in seconds that a successful CAPTCHA response increases\n"
+"karma."
+msgstr "보안 문자 대답이 올바를 때 점수를 더할 시간(초)입니다."
+
+#: tracspamfilter/captcha/api.py:68
+msgid "Time in seconds before CAPTCHA is removed."
+msgstr "생성한 보안 문자를 제거할 시간 간격(초)입니다."
+
+#: tracspamfilter/captcha/api.py:72
+msgid "Time in seconds before database cleanup is called."
+msgstr "데이터베이스 정리를 실행할 시간 간격(초)입니다."
+
+#: tracspamfilter/captcha/api.py:90
+#, python-format
+msgid "Human verified via CAPTCHA (%s)"
+msgstr "보안 문자(%s)를 통해 사람임이 확인됨"
+
+#: tracspamfilter/captcha/api.py:98
+#, python-format
+msgid "Failed CAPTCHA (%s) attempts"
+msgstr "보안 문자 (%s) 시도를 실패함"
+
+#: tracspamfilter/captcha/api.py:130
+msgid "CAPTCHA failed to handle original request"
+msgstr "보안 문자 처리기가 원본 요청의 처리를 실패하였습니다."
+
+#: tracspamfilter/captcha/api.py:132
+msgid "CAPTCHA verification failed"
+msgstr "보안 문자 인증을 실패하였습니다."
+
+#: tracspamfilter/captcha/areyouahuman.py:32
+msgid "Publisher key for AreYouAHuman usage."
+msgstr "Are You a Human 서비스 사용을 위한 게시자 키입니다."
+
+#: tracspamfilter/captcha/areyouahuman.py:36
+msgid "Scoring key for AreYouAHuman usage."
+msgstr "Are You a Human 서비스 사용을 위한 채점(Scoring) 키입니다."
+
+#: tracspamfilter/captcha/areyouahuman.py:40
+msgid "Host name for AreYouAHuman usage."
+msgstr "Are You a Human 서비스 사용을 위한 호스트 이름입니다."
+
+#: tracspamfilter/captcha/expression.py:33
+msgid "Number of terms in numeric CAPTCHA expression."
+msgstr "수식 보안 문자에 사용할 항의 수입니다."
+
+#: tracspamfilter/captcha/expression.py:37
+msgid ""
+"Maximum value of individual terms in numeric CAPTCHA\n"
+"expression."
+msgstr "수식 보안 문자의 각 항의 최댓값입니다."
+
+#: tracspamfilter/captcha/expression.py:41
+msgid "multiplied by"
+msgstr "곱하기"
+
+#: tracspamfilter/captcha/expression.py:41
+msgid "minus"
+msgstr "빼기"
+
+#: tracspamfilter/captcha/expression.py:42
+msgid "plus"
+msgstr "더하기"
+
+#: tracspamfilter/captcha/expression.py:44
+msgid "zero"
+msgstr "영"
+
+#: tracspamfilter/captcha/expression.py:44
+msgid "one"
+msgstr "일"
+
+#: tracspamfilter/captcha/expression.py:44
+msgid "two"
+msgstr "이"
+
+#: tracspamfilter/captcha/expression.py:44
+msgid "three"
+msgstr "삼"
+
+#: tracspamfilter/captcha/expression.py:44
+msgid "four"
+msgstr "사"
+
+#: tracspamfilter/captcha/expression.py:45
+msgid "five"
+msgstr "오"
+
+#: tracspamfilter/captcha/expression.py:45
+msgid "six"
+msgstr "육"
+
+#: tracspamfilter/captcha/expression.py:45
+msgid "seven"
+msgstr "칠"
+
+#: tracspamfilter/captcha/expression.py:45
+msgid "eight"
+msgstr "팔"
+
+#: tracspamfilter/captcha/expression.py:46
+msgid "nine"
+msgstr "구"
+
+#: tracspamfilter/captcha/expression.py:46
+msgid "ten"
+msgstr "십"
+
+#: tracspamfilter/captcha/expression.py:46
+msgid "eleven"
+msgstr "십일"
+
+#: tracspamfilter/captcha/expression.py:46
+msgid "twelve"
+msgstr "십이"
+
+#: tracspamfilter/captcha/expression.py:47
+msgid "thirteen"
+msgstr "십삼"
+
+#: tracspamfilter/captcha/expression.py:47
+msgid "fourteen"
+msgstr "십사"
+
+#: tracspamfilter/captcha/expression.py:47
+msgid "fifteen"
+msgstr "십오"
+
+#: tracspamfilter/captcha/expression.py:48
+msgid "sixteen"
+msgstr "십육"
+
+#: tracspamfilter/captcha/expression.py:48
+msgid "seventeen"
+msgstr "십칠"
+
+#: tracspamfilter/captcha/expression.py:48
+msgid "eighteen"
+msgstr "십팔"
+
+#: tracspamfilter/captcha/expression.py:49
+msgid "nineteen"
+msgstr "십구"
+
+#. TRANSLATOR: if compound numbers like in english are not
+#. supported, simply add a "plus" command to the following
+#. translations!
+#: tracspamfilter/captcha/expression.py:54
+msgid "twenty"
+msgstr "이십"
+
+#: tracspamfilter/captcha/expression.py:54
+msgid "thirty"
+msgstr "삼십"
+
+#: tracspamfilter/captcha/expression.py:54
+msgid "forty"
+msgstr "사십"
+
+#: tracspamfilter/captcha/expression.py:54
+msgid "fifty"
+msgstr "오십"
+
+#: tracspamfilter/captcha/expression.py:55
+msgid "sixty"
+msgstr "육십"
+
+#: tracspamfilter/captcha/expression.py:55
+msgid "seventy"
+msgstr "칠십"
+
+#: tracspamfilter/captcha/expression.py:55
+msgid "eighty"
+msgstr "팔십"
+
+#: tracspamfilter/captcha/expression.py:55
+msgid "ninety"
+msgstr "구십"
+
+#: tracspamfilter/captcha/expression.py:62
+msgid "Numeric captcha can not represent numbers > 100"
+msgstr "숫자 형식의 보안 문자는 100을 넘는 숫자를 표현할 수 없습니다."
+
+#: tracspamfilter/captcha/image.py:47
+msgid "Set of fonts to choose from when generating image CAPTCHA."
+msgstr "이미지 형식의 보안 문자를 생성할 때 사용할 글꼴 목록입니다."
+
+#: tracspamfilter/captcha/image.py:51
+msgid "Font size to use in image CAPTCHA."
+msgstr "이미지 형식의 보안 문자에서 사용할 글꼴 크기입니다."
+
+#: tracspamfilter/captcha/image.py:55
+msgid "Alphabet to choose image CAPTCHA challenge from."
+msgstr "이미지 형식의 보안 문자에서 사용할 알파벳입니다."
+
+#: tracspamfilter/captcha/image.py:60
+msgid "Number of letters to use in image CAPTCHA challenge."
+msgstr "이미지 형식의 보안 문자의 글자 수입니다."
+
+#: tracspamfilter/captcha/keycaptcha.py:33
+msgid "Private key for KeyCaptcha usage."
+msgstr "KeyCaptcha 서비스 사용을 위한 개인 키입니다."
+
+#: tracspamfilter/captcha/keycaptcha.py:37
+msgid "User id for KeyCaptcha usage."
+msgstr "KeyCaptcha 서비스의 사용자 아이디입니다."
+
+#: tracspamfilter/captcha/recaptcha.py:33
+msgid "Private key for reCaptcha usage."
+msgstr "reCaptcha 서비스 사용을 위한 개인 키입니다."
+
+#: tracspamfilter/captcha/recaptcha.py:37
+msgid "Public key for reCaptcha usage."
+msgstr "reCaptcha 서비스 사용을 위한 공개 키입니다."
+
+#: tracspamfilter/captcha/recaptcha.py:56
+#: tracspamfilter/templates/verify_captcha.html:24
+msgid "Submit"
+msgstr "제출"
+
+#: tracspamfilter/filters/akismet.py:42
+msgid ""
+"By how many points an Akismet reject impacts the overall karma of\n"
+"a submission."
+msgstr "Akismet 필터가 내용을 거부했을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/akismet.py:46
+msgid "Wordpress key required to use the Akismet API."
+msgstr "Akismet API를 사용하는 데 필요한 워드프레스 키입니다."
+
+#: tracspamfilter/filters/akismet.py:50
+msgid "URL of the Akismet service."
+msgstr "Akismet 서비스의 주소입니다."
+
+#: tracspamfilter/filters/akismet.py:75
+msgid "Akismet says content is spam"
+msgstr "Akismet 서비스가 내용이 스팸이라고 판단함"
+
+#: tracspamfilter/filters/bayes.py:39
+msgid ""
+"By what factor Bayesian spam probability score affects the overall\n"
+"karma of a submission."
+msgstr "베이지안 스팸 확률 점수를 전체 점수에 반영할 계수입니다."
+
+#: tracspamfilter/filters/bayes.py:43
+msgid ""
+"The minimum number of submissions in the training database required\n"
+"for the filter to start impacting the karma of submissions."
+msgstr "스팸 점수 판단을 시작하기 전에 필요한, 학습 데이터베이스에 있는 제출된 내용의 수입니다."
+
+#: tracspamfilter/filters/blogspam.py:32
+msgid ""
+"By how many points an BlogSpam reject impacts the overall karma of\n"
+"a submission."
+msgstr "BlogSpam 필터가 내용을 거부했을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/blogspam.py:36
+msgid "URL of the BlogSpam service."
+msgstr "BlogSpam 서비스의 주소입니다."
+
+#: tracspamfilter/filters/blogspam.py:39
+msgid "Comma separated list of tests to skip."
+msgstr "통과할 테스트를 쉼표로 구분된 목록으로 입력합니다."
+
+#: tracspamfilter/filters/blogspam.py:59
+#, python-format
+msgid "BlogSpam says content is spam (%s)"
+msgstr "BlogSpam 서비스가 내용이 스팸이라고 판단함 (%s)"
+
+#: tracspamfilter/filters/botscout.py:31
+msgid ""
+"By how many points a BotScout reject impacts the overall karma of\n"
+"a submission."
+msgstr "BotScout 필터가 내용을 거부했을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/botscout.py:35
+msgid "API key required to use BotScout."
+msgstr "BotScout 서비스를 사용하는 데 필요한 API 키입니다."
+
+#: tracspamfilter/filters/botscout.py:61
+#, python-format
+msgid "BotScout says this is spam (%s)"
+msgstr "BotScout 서비스가 스팸이라고 판단함 (%s)"
+
+#: tracspamfilter/filters/defensio.py:44
+msgid ""
+"By how many points a Defensio reject impacts the overall karma of\n"
+"a submission."
+msgstr "Defensio 필터가 내용을 거부했을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/defensio.py:48
+msgid "Defensio key required to use the API."
+msgstr "Defensio 서비스를 사용하는 데 필요한 API 키입니다."
+
+#: tracspamfilter/filters/defensio.py:51
+msgid "URL of the Defensio service."
+msgstr "Defensio 서비스의 주소입니다."
+
+#: tracspamfilter/filters/defensio.py:84
+#, python-format
+msgid "Defensio says content is not allowed (%s, %s, %s)"
+msgstr "Defensio 서비스가 내용이 허용되지 않는다고 판단함 (%s, %s, %s)"
+
+#: tracspamfilter/filters/defensio.py:90
+#, python-format
+msgid "Defensio says content is allowed (%s, %s, %s)"
+msgstr "Defensio 서비스가 내용이 허용된다고 판단함 (%s, %s, %s)"
+
+#: tracspamfilter/filters/extlinks.py:28
+msgid ""
+"By how many points too many external links in a submission impact\n"
+"the overall score."
+msgstr "외부 링크가 너무 많을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/extlinks.py:32
+msgid ""
+"The maximum number of external links allowed in a submission until\n"
+"that submission gets negative karma."
+msgstr "제출된 내용에 허용되는 외부 링크의 최대 수입니다. 이 수를 초과하면 점수가 차감됩니다."
+
+#: tracspamfilter/filters/extlinks.py:36
+msgid "List of domains that should be allowed in external links"
+msgstr "외부 링크에 허용할 도메인의 목록입니다."
+
+#: tracspamfilter/filters/extlinks.py:63
+msgid "Maximum number of external links per post exceeded"
+msgstr "내용에 포함할 수 있는 외부 링크의 최대 수를 초과함"
+
+#: tracspamfilter/filters/extlinks.py:66
+msgid "External links in post found"
+msgstr "내용에 외부 링크가 존재함"
+
+#: tracspamfilter/filters/fspamlist.py:32
+msgid ""
+"By how many points a FSpamList reject impacts the overall karma of\n"
+"a submission."
+msgstr "FSpamList 필터가 내용을 거부했을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/fspamlist.py:36
+msgid "API key required to use FSpamList."
+msgstr "FSpamList 서비스를 사용하는 데 필요한 API 키입니다."
+
+#: tracspamfilter/filters/fspamlist.py:67
+#, python-format
+msgid "FSpamList says this is spam (%s)"
+msgstr "FSpamList 서비스가 스팸이라고 판단함 (%s)"
+
+#: tracspamfilter/filters/httpbl.py:33
+msgid ""
+"By how many points listing as \"comment spammer\" impacts the\n"
+"overall karma of a submission."
+msgstr "\"덧글 스패머\"로 판정되었을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/httpbl.py:37
+msgid "Http:BL API key required for use."
+msgstr "Http:BL 서비스를 사용하는 데 필요한 API 키입니다."
+
+#: tracspamfilter/filters/httpbl.py:76
+#, python-format
+msgid "IP %s blacklisted by Http:BL"
+msgstr "%s 아이피가 Http:BL에 의해 차단됨"
+
+#: tracspamfilter/filters/ip_blacklist.py:32
+msgid ""
+"By how many points blacklisting by a single server impacts the\n"
+"overall karma of a submission."
+msgstr "각 서버에 의해 차단되었을 때마다 차감할 점수입니다."
+
+#: tracspamfilter/filters/ip_blacklist.py:36
+msgid "Servers used for IP blacklisting."
+msgstr "IP 차단에 사용할 서버입니다."
+
+#: tracspamfilter/filters/ip_blacklist.py:80
+#, python-format
+msgid "IP %s blacklisted by %s"
+msgstr "%s 아이피가 %s에 의해 차단됨"
+
+#: tracspamfilter/filters/ip_regex.py:34
+msgid ""
+"By how many points a match with a pattern on the BadIP page\n"
+"impacts the overall karma of a submission."
+msgstr "BadIP 페이지에 있는 패턴과 일치했을 때마다 차감할 점수입니다."
+
+#: tracspamfilter/filters/ip_regex.py:37
+msgid ""
+"Local file to be loaded to get BadIP. Can be used in\n"
+"addition to BadIP wiki page."
+msgstr "BadIP 패턴을 읽어 올 로컬 파일입니다. BadIP 위키 페이지 외에 추가로 사용할 수 있습니다."
+
+#: tracspamfilter/filters/ip_regex.py:40
+msgid "Show the matched bad IP patterns in rejection message."
+msgstr "일치한 IP 패턴을 거부 메시지에 표시할 지 여부입니다."
+
+#: tracspamfilter/filters/ip_regex.py:76
+#, python-format
+msgid "IP catched by these blacklisted patterns: %s"
+msgstr "IP가 다음 차단 패턴과 일치함: %s"
+
+#: tracspamfilter/filters/ip_regex.py:78
+#, python-format
+msgid "IP catched by %s blacklisted patterns"
+msgstr "IP가 %s 개 차단 패턴과 일치함"
+
+#: tracspamfilter/filters/ip_throttle.py:27
+msgid ""
+"By how many points exceeding the configured maximum number of posts\n"
+"per hour impacts the overall score."
+msgstr "설정된 시간 당 최대 게시 수를 초과하였을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/ip_throttle.py:31
+msgid ""
+"The maximum allowed number of submissions per hour from a single IP\n"
+"address. If this limit is exceeded, subsequent submissions get negative\n"
+"karma."
+msgstr "단일 IP 주소에 허용된 시간 당 게시 수입니다. 이 제한을 초과하면 이후의 제출부터는 점수가 차감됩니다."
+
+#: tracspamfilter/filters/ip_throttle.py:52
+msgid "Maximum number of posts per hour for this IP exceeded"
+msgstr "이 IP에서의 시간 당 최대 게시 수를 초과함"
+
+#: tracspamfilter/filters/linksleeve.py:29
+msgid ""
+"By how many points a LinkSleeve reject impacts the overall karma of\n"
+"a submission."
+msgstr "LinkSleeve 필터가 내용을 거부했을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/linksleeve.py:47
+msgid "LinkSleeve says this is spam"
+msgstr "LinkSleeve 서비스가 스팸이라고 판단함"
+
+#: tracspamfilter/filters/mollom.py:34
+msgid ""
+"By how many points an Mollom reject impacts the overall karma of\n"
+"a submission."
+msgstr "Mollom 필터가 내용을 거부했을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/mollom.py:38
+msgid "Public key required to use the Mollom API."
+msgstr "Mollom API를 사용하는 데 필요한 공개 키입니다."
+
+#: tracspamfilter/filters/mollom.py:42
+msgid "Private key required to use the Mollom API."
+msgstr "Mollom API를 사용하는 데 필요한 개인 키입니다."
+
+#: tracspamfilter/filters/mollom.py:46
+msgid "URL of the Mollom service."
+msgstr "Mollom 서비스의 주소입니다."
+
+#: tracspamfilter/filters/mollom.py:93
+msgid "Mollom says content is spam"
+msgstr "Mollom 서비스가 내용이 스팸이라고 판단함"
+
+#: tracspamfilter/filters/mollom.py:104
+msgid "Mollom says content is ham"
+msgstr "Mollom 서비스가 내용이 햄(유효)이라고 판단함"
+
+#: tracspamfilter/filters/regex.py:31
+msgid ""
+"By how many points a match with a pattern on the BadContent page\n"
+"impacts the overall karma of a submission."
+msgstr "BadContent 페이지에 있는 패턴과 일치했을 때마다 차감할 점수입니다."
+
+#: tracspamfilter/filters/regex.py:34
+msgid ""
+"Local file to be loaded to get BadContent. Can be used in\n"
+"addition to BadContent wiki page."
+msgstr "BadContent 패턴을 읽어 올 로컬 파일입니다. BadContent 위키 페이지 외에 추가로 사용할 수 있습니다."
+
+#: tracspamfilter/filters/regex.py:37
+msgid "Show the matched bad content patterns in rejection message."
+msgstr "일치한 내용 패턴을 거부 메시지에 표시할 지 여부입니다."
+
+#: tracspamfilter/filters/regex.py:77
+#, python-format
+msgid "Content contained these blacklisted patterns: %s"
+msgstr "내용이 다음 차단 패턴을 포함함: %s"
+
+#: tracspamfilter/filters/regex.py:79
+#, python-format
+msgid "Content contained %s blacklisted patterns"
+msgstr "내용이 %s 개 차단 패턴을 포함함"
+
+#: tracspamfilter/filters/registration.py:27
+msgid ""
+"By how many points a failed registration check impacts\n"
+"the overall score."
+msgstr "사용자 등록 검사를 실패했을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/registration.py:31
+msgid "Replace checks in account manager totally."
+msgstr "계정 관리자의 검사를 완전히 대체합니다."
+
+#: tracspamfilter/filters/registration.py:81
+#, python-format
+msgid "Account registration failed (%s)"
+msgstr "계정 등록 실패 (%s)"
+
+#: tracspamfilter/filters/session.py:26
+msgid ""
+"By how many points an existing and configured session improves the\n"
+"overall karma of the submission. A third of the points is granted for\n"
+"having an existing session at all, the other two thirds are granted\n"
+"when the user has his name and/or email address set in the session,\n"
+"respectively."
+msgstr ""
+"존재하며 설정된 세션에 따라 가산할 점수입니다. 점수의 삼분의 일은 세션이 존재할 때 부여되며, 나머지 삼분의 이는 각각 사용자가 "
+"이름을 설정하고 메일 주소를 설정했을 때 부여됩니다."
+
+#: tracspamfilter/filters/session.py:48
+msgid "Existing session found"
+msgstr "세션이 존재함"
+
+#: tracspamfilter/filters/stopforumspam.py:31
+msgid ""
+"By how many points a StopForumSpam reject impacts the overall karma of\n"
+"a submission."
+msgstr "StopForumSpam 필터가 내용을 거부했을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/stopforumspam.py:35
+msgid "API key used to report SPAM."
+msgstr "스팸을 보고할 때 사용할 API 키입니다."
+
+#: tracspamfilter/filters/stopforumspam.py:63
+#, python-format
+msgid "StopForumSpam says this is spam (%s)"
+msgstr "StopForumSpam 서비스가 스팸이라고 판단함 (%s)"
+
+#: tracspamfilter/filters/trapfield.py:28
+msgid ""
+"By how many points a trap reject impacts the overall karma of\n"
+"a submission."
+msgstr "함정 필드 필터가 내용을 거부했을 때 차감할 점수입니다."
+
+#: tracspamfilter/filters/trapfield.py:31
+msgid ""
+"Name of the invisible trap field, should contain some reference\n"
+"to e-mail for better results."
+msgstr "보이지 않는 함정 필드의 이름입니다. 향상된 결과를 위해 전자 메일과 관련된 것이어야 합니다."
+
+#: tracspamfilter/filters/trapfield.py:34
+msgid ""
+"Name of the hidden trap field, should contain some reference\n"
+"to e-mail for better results."
+msgstr "숨겨진 함정 필드의 이름입니다. 향상된 결과를 위해 전자 메일과 관련된 것이어야 합니다."
+
+#: tracspamfilter/filters/trapfield.py:58
+#, python-format
+msgid "Both trap fields says this is spam (%s, %s)"
+msgstr "두 함정 필드가 스팸이라고 판단함 (%s, %s)"
+
+#: tracspamfilter/filters/trapfield.py:61
+#, python-format
+msgid "Invisible trap field says this is spam (%s)"
+msgstr "보이지 않는 함정 필드가 스팸이라고 판단함 (%s)"
+
+#: tracspamfilter/filters/trapfield.py:64
+#, python-format
+msgid "Hidden trap field says this is spam (%s)"
+msgstr "숨겨진 함정 필드가 스팸이라고 판단함 (%s)"
+
+#: tracspamfilter/templates/admin_bayes.html:14
+msgid "Spam Filtering: Bayes"
+msgstr "스팸 필터링: 베이즈 필터"
+
+#: tracspamfilter/templates/admin_bayes.html:20
+#, python-format
+msgid ""
+"The bayesian filter requires training before it can effectively\n"
+"        differentiate between spam and ham. The training database "
+"currently\n"
+"        contains [1:%(numspam)s spam] and\n"
+"        [2:%(numham)s ham] %(ratio)s submissions."
+msgstr ""
+"베이지안 필터가 스팸과 햄(유효한 내용)을 구별할 수 있으려면, 먼저 학습이 필요합니다.\n"
+"학습 데이터베이스는 현재 [1:%(numspam)s 개 스팸]과 [2:%(numham)s 개 햄] %(ratio)s 항목을 보유하고"
+" 있습니다."
+
+#: tracspamfilter/templates/admin_bayes.html:26
+msgid "Clear training database"
+msgstr "학습 데이터베이스 지우기"
+
+#: tracspamfilter/templates/admin_bayes.html:29
+msgid ""
+"Resetting the training database can help when training was incorrect\n"
+"            and is producing bad results."
+msgstr "학습된 내용이 올바르지 않아 판단 결과가 좋지 않을 경우, 학습 데이터베이스를 초기화 할 수 있습니다."
+
+#: tracspamfilter/templates/admin_bayes.html:35
+msgid "Minimum training required:"
+msgstr "필요한 최소 학습 수:"
+
+#: tracspamfilter/templates/admin_bayes.html:39
+msgid ""
+"The minimum number of spam and ham in the training database before\n"
+"            the filter starts affecting the karma of submissions."
+msgstr "스팸 점수 판단을 시작하기 전에 필요한, 학습 데이터베이스에 있는 스팸과 햄(유효 내용)의 최소 숫자입니다."
+
+#: tracspamfilter/templates/admin_bayes.html:45
+#: tracspamfilter/templates/admin_captcha.html:200
+#: tracspamfilter/templates/admin_external.html:256
+#: tracspamfilter/templates/admin_spamconfig.html:117
+msgid "Apply changes"
+msgstr "변경 사항 적용하기"
+
+#: tracspamfilter/templates/admin_bayes.html:50
+msgid "Training"
+msgstr "학습"
+
+#: tracspamfilter/templates/admin_bayes.html:51
+msgid ""
+"While you can train the spam filter from the “[1:Spam\n"
+"          Filtering → Monitoring]” panel in the web\n"
+"          administration interface, you can also manually train the "
+"filter by\n"
+"          entering samples here, or check what kind of spam probability\n"
+"          currently gets assigned to the content."
+msgstr ""
+"웹 관리자 화면의 “[1:스팸 필터링 → 모니터링]” 패널에서 스팸 필터를 학습시킬 수 있지만, 여기에 예제를 입력하여 수동으로 "
+"필터를 학습시킬 수도 있습니다.\n"
+"또한 내용에 따라 스팸 확률 점수가 어떻게 되는지 확인할 수 있습니다."
+
+#: tracspamfilter/templates/admin_bayes.html:59
+msgid "Content:"
+msgstr "내용:"
+
+#: tracspamfilter/templates/admin_bayes.html:64
+#, python-format
+msgid "Error: %(error)s"
+msgstr "오류: %(error)s"
+
+#: tracspamfilter/templates/admin_bayes.html:65
+#, python-format
+msgid "Score: %(score)s%"
+msgstr "점수: %(score)s%"
+
+#: tracspamfilter/templates/admin_bayes.html:68
+#: tracspamfilter/templates/admin_statistics.html:35
+msgid "Test"
+msgstr "테스트"
+
+#: tracspamfilter/templates/admin_bayes.html:70
+msgid "Train as Spam"
+msgstr "스팸으로 학습"
+
+#: tracspamfilter/templates/admin_bayes.html:71
+msgid "Train as Ham"
+msgstr "햄(유효)으로 학습"
+
+#: tracspamfilter/templates/admin_captcha.html:10
+msgid "Captcha handling"
+msgstr "보안 문자 처리"
+
+#: tracspamfilter/templates/admin_captcha.html:14
+msgid "Spam Filtering: Captcha handling"
+msgstr "스팸 필터링: 보안 문자 처리"
+
+#: tracspamfilter/templates/admin_captcha.html:20
+msgid "Enable captcha usage"
+msgstr "보안 문자 사용 활성"
+
+#: tracspamfilter/templates/admin_captcha.html:27
+msgid "Captcha type:"
+msgstr "보안 문자 종류:"
+
+#: tracspamfilter/templates/admin_captcha.html:41
+msgid "Maximum captcha lifetime in seconds"
+msgstr "보안 문자의 최대 유효 시간 (초):"
+
+#: tracspamfilter/templates/admin_captcha.html:49
+msgid "reCAPTCHA"
+msgstr "reCAPTCHA"
+
+#: tracspamfilter/templates/admin_captcha.html:50
+msgid ""
+"The reCAPTCHA system provides a very good captcha system based on\n"
+"          scanned books. See\n"
+"          [1:Google\n"
+"          reCAPTCHA] page. You need to obtain\n"
+"          API keys to use the service, which is freely available for "
+"personal use."
+msgstr ""
+"reCAPTCHA 시스템은 스캔된 책을 기반으로 한 훌륭한 보안 문자 시스템을 제공합니다. [1:Google reCAPTCHA] "
+"페이지를 확인하십시오.\n"
+"서비스를 사용하기 위해서는 API 키를 받아야 하며, 개인 용도로 사용할 때는 무료입니다."
+
+#: tracspamfilter/templates/admin_captcha.html:59
+#: tracspamfilter/templates/admin_external.html:209
+msgid "Public key:"
+msgstr "공개 키:"
+
+#: tracspamfilter/templates/admin_captcha.html:64
+#: tracspamfilter/templates/admin_captcha.html:93
+msgid "Private key:"
+msgstr "개인 키:"
+
+#: tracspamfilter/templates/admin_captcha.html:73
+#: tracspamfilter/templates/admin_captcha.html:102
+#: tracspamfilter/templates/admin_captcha.html:136
+msgid "Key validation failed:"
+msgstr "키 검증 실패:"
+
+#: tracspamfilter/templates/admin_captcha.html:78
+msgid "KeyCaptcha"
+msgstr "KeyCaptcha"
+
+#: tracspamfilter/templates/admin_captcha.html:79
+msgid ""
+"The KeyCatcha system provides a captcha system based on JavaScript\n"
+"          functions to reassemble a picture. See\n"
+"          [1:KeyCaptcha]\n"
+"          page. You need to obtain an API key to use the service, which "
+"is\n"
+"          freely available for limited use."
+msgstr ""
+"KeyCatcha 시스템은 그림 조각 맞추기를 기반으로 한 보안 문자 시스템을 제공합니다. 실행에는 JavaScript 기능이 "
+"필요합니다. [1:KeyCaptcha] 페이지를 확인하십시오.\n"
+"서비스를 사용하기 위해서는 API 키를 받아야 하며, 제한된 용도로 사용할 때는 무료입니다."
+
+#: tracspamfilter/templates/admin_captcha.html:88
+msgid "User ID:"
+msgstr "사용자 아이디:"
+
+#: tracspamfilter/templates/admin_captcha.html:107
+msgid "Are You A Human"
+msgstr "Are You a Human"
+
+#: tracspamfilter/templates/admin_captcha.html:108
+msgid ""
+"The Are You A Human system provides a captcha system based on JavaScript\n"
+"          and Flash functions to play a little game. See\n"
+"          [1:AreYouAHuman]\n"
+"          page. You need to obtain API keys to use the service, which are"
+"\n"
+"          freely available for limited use."
+msgstr ""
+"Are You a Human 시스템은 간단한 게임을 기반으로 한 보안 문자 시스템을 제공합니다. 게임의 실행에는 "
+"JavaScript와 Flash 기능이 필요합니다. [1:Are You a Human] 페이지를 확인하십시오.\n"
+"서비스를 사용하기 위해서는 API 키를 받아야 하며, 제한된 용도로 사용할 때는 무료입니다."
+
+#: tracspamfilter/templates/admin_captcha.html:115
+msgid ""
+"NOTE: You need to change the game style from 'Lightbox' to\n"
+"          'Embedded' in the AreYouAHuman server settings to allow usage "
+"with\n"
+"          this spam filter."
+msgstr ""
+"참고: 스팸 필터에서 사용하려면, Are You a Human 서버 설정에서 게임 형식을 'LightBox'에서 "
+"'Embedded'로 변경하여야 합니다."
+
+#: tracspamfilter/templates/admin_captcha.html:122
+msgid "Publisher key:"
+msgstr "게시자 키:"
+
+#: tracspamfilter/templates/admin_captcha.html:127
+msgid "Scoring key:"
+msgstr "채점(Scoring) 키:"
+
+#: tracspamfilter/templates/admin_captcha.html:141
+msgid "Text captcha"
+msgstr "텍스트 보안 문자"
+
+#: tracspamfilter/templates/admin_captcha.html:142
+msgid ""
+"The text captcha constructs easy text questions. They can be\n"
+"          broken relatively easy."
+msgstr "텍스트 보안 문자는 쉬운 단답형 질문을 생성합니다. 이는 상대적으로 쉽게 뚫릴 수 있습니다."
+
+#: tracspamfilter/templates/admin_captcha.html:148
+msgid "Maximum value in a term:"
+msgstr "수식 각 항의 최댓값:"
+
+#: tracspamfilter/templates/admin_captcha.html:153
+msgid "Number of terms:"
+msgstr "수식의 항 수:"
+
+#: tracspamfilter/templates/admin_captcha.html:163
+msgid "Image captcha"
+msgstr "이미지 보안 문자"
+
+#: tracspamfilter/templates/admin_captcha.html:164
+msgid ""
+"The image captcha constructs obstructed images using Python\n"
+"          imaging library."
+msgstr "이미지 보안 문자는 Python 이미징 라이브러리를 이용하여 변형된 이미지를 생성합니다."
+
+#: tracspamfilter/templates/admin_captcha.html:170
+msgid "Number of letters:"
+msgstr "글자 수:"
+
+#: tracspamfilter/templates/admin_captcha.html:175
+msgid "Font size:"
+msgstr "글꼴 크기:"
+
+#: tracspamfilter/templates/admin_captcha.html:180
+msgid "Alphabet:"
+msgstr "알파벳:"
+
+#: tracspamfilter/templates/admin_captcha.html:185
+msgid "Fonts:"
+msgstr "글꼴:"
+
+#: tracspamfilter/templates/admin_captcha.html:195
+msgid "Data validation failed:"
+msgstr "데이터 검증 실패:"
+
+#: tracspamfilter/templates/admin_captcha.html:201
+#: tracspamfilter/templates/admin_external.html:257
+msgid "Revert changes"
+msgstr "변경 내용 되돌리기"
+
+#: tracspamfilter/templates/admin_external.html:10
+msgid "External services"
+msgstr "외부 서비스"
+
+#: tracspamfilter/templates/admin_external.html:14
+msgid "Spam Filtering: External services"
+msgstr "스팸 필터링: 외부 서비스"
+
+#: tracspamfilter/templates/admin_external.html:17
+msgid "An error checking supplied data occured, see below for details."
+msgstr "입력된 데이터를 확인하는 과정에서 오류가 발생하였습니다. 상세 내용은 아래를 참조하십시오."
+
+#: tracspamfilter/templates/admin_external.html:24
+msgid "Use external services"
+msgstr "외부 서비스 사용"
+
+#: tracspamfilter/templates/admin_external.html:32
+msgid "Train external services"
+msgstr "외부 서비스에 대해 학습 사용"
+
+#: tracspamfilter/templates/admin_external.html:36
+msgid ""
+"Skip external services, when internal tests reach a karma of -\n"
+"            Spam:\n"
+"            [1:]\n"
+"            Ham:\n"
+"            [2:]"
+msgstr ""
+"내부 테스트의 점수가 다음에 도달하면 외부 서비스를 통과합니다 -\n"
+"스팸: [1:]\n"
+"햄(유효): [2:]"
+
+#: tracspamfilter/templates/admin_external.html:46
+msgid ""
+"Stop external services, when reached a karma of -\n"
+"            Spam:\n"
+"            [1:]\n"
+"            Ham:\n"
+"            [2:]"
+msgstr ""
+"점수가 다음에 도달하면 외부 서비스의 사용을 멈춥니다 -\n"
+"스팸: [1:]\n"
+"햄(유효): [2:]"
+
+#: tracspamfilter/templates/admin_external.html:58
+msgid ""
+"The Akismet filter uses the free\n"
+"          [1:Akismet]\n"
+"          service to decide if content submissions are potential spam. "
+"You need to obtain an\n"
+"          API key to use the service, which is freely available for "
+"personal use."
+msgstr ""
+"Akismet 필터는 제출된 내용이 스팸인지를 판단하기 위해 무료 [1:Akismet] 서비스를 활용합니다. 서비스를 사용하기 "
+"위해서는 API 키를 받아야 하며, 개인 용도로 사용할 때는 무료입니다."
+
+#: tracspamfilter/templates/admin_external.html:65
+#: tracspamfilter/templates/admin_external.html:93
+#: tracspamfilter/templates/admin_external.html:143
+#: tracspamfilter/templates/admin_external.html:160
+#: tracspamfilter/templates/admin_external.html:176
+#: tracspamfilter/templates/admin_external.html:193
+msgid "API key:"
+msgstr "API 키:"
+
+#: tracspamfilter/templates/admin_external.html:71
+#: tracspamfilter/templates/admin_external.html:99
+#: tracspamfilter/templates/admin_external.html:119
+#: tracspamfilter/templates/admin_external.html:221
+msgid "URL:"
+msgstr "주소:"
+
+#: tracspamfilter/templates/admin_external.html:77
+#: tracspamfilter/templates/admin_external.html:105
+#: tracspamfilter/templates/admin_external.html:227
+#: tracspamfilter/templates/admin_external.html:232
+#, python-format
+msgid "[1:Key validation failed:] %(error)s"
+msgstr "[1:키 검증 실패:] %(error)s"
+
+#: tracspamfilter/templates/admin_external.html:85
+msgid ""
+"The Defensio filter uses the\n"
+"          [1:Defensio]\n"
+"          service to decide if content submissions are potential spam. "
+"You need to obtain an\n"
+"          API key to use the service, which is freely available for "
+"personal use."
+msgstr ""
+"Defensio 필터는 제출된 내용이 스팸인지를 판단하기 위해 [1:Defensio] 서비스를 활용합니다. 서비스를 사용하기 "
+"위해서는 API 키를 받아야 하며, 개인 용도로 사용할 때는 무료입니다."
+
+#: tracspamfilter/templates/admin_external.html:113
+msgid ""
+"The BlogSpam filter uses the free\n"
+"          [1:BlogSpam]\n"
+"          service to decide if content submissions are potential spam."
+msgstr "BlogSpam 필터는 제출된 내용이 스팸인지를 판단하기 위해 무료 [1:BlogSpam] 서비스를 활용합니다."
+
+#: tracspamfilter/templates/admin_external.html:125
+msgid "Tests to skip (comma separated):"
+msgstr "통과할 테스트 (쉼표로 구분):"
+
+#: tracspamfilter/templates/admin_external.html:128
+#, python-format
+msgid "Possible Values: %(methods)s"
+msgstr "사용할 수 있는 값: %(methods)s"
+
+#: tracspamfilter/templates/admin_external.html:135
+msgid ""
+"The StopForumSpam filter uses the\n"
+"          [1:StopForumSpam]\n"
+"          service to decide if content submissions are potential spam. "
+"You need to obtain an\n"
+"          API key to report SPAM to the service, which is freely "
+"available."
+msgstr ""
+"StopForumSpam 필터는 제출된 내용이 스팸인지를 판단하기 위해 [1:StopForumSpam] 서비스를 활용합니다. "
+"서비스에 스팸을 보고하기 위해서는 API 키를 받아야 하며, 자유롭게 사용할 수 있습니다."
+
+#: tracspamfilter/templates/admin_external.html:152
+msgid ""
+"The BotScout filter uses the\n"
+"          [1:BotScout]\n"
+"          service to decide if content submissions are potential spam. "
+"You need to obtain an\n"
+"          API key to use the service, which is freely available."
+msgstr ""
+"BotScout 필터는 제출된 내용이 스팸인지를 판단하기 위해 [1:BotScout] 서비스를 활용합니다. 서비스를 사용하기 "
+"위해서는 API 키를 받아야 하며, 자유롭게 사용할 수 있습니다."
+
+#: tracspamfilter/templates/admin_external.html:169
+msgid ""
+"The FSpamList filter uses the\n"
+"          [1:FSpamList]\n"
+"          service to decide if content submissions are potential spam. "
+"You need to obtain an\n"
+"          API key to use the service, which is freely available."
+msgstr ""
+"FSpamList 필터는 제출된 내용이 스팸인지를 판단하기 위해 [1:FSpamList] 서비스를 활용합니다. 서비스를 사용하기 "
+"위해서는 API 키를 받아야 하며, 자유롭게 사용할 수 있습니다."
+
+#: tracspamfilter/templates/admin_external.html:185
+msgid ""
+"The HTTP_BL filter uses the free\n"
+"          [1:HTTP:BL]\n"
+"          service to decide if content submissions are potential spam. "
+"You need to obtain an\n"
+"          API key to use the service, which is freely available for "
+"personal use."
+msgstr ""
+"HTTP_BL 필터는 제출된 내용이 스팸인지를 판단하기 위해 무료 [1:HTTP_BL] 서비스를 활용합니다. 서비스를 사용하기 "
+"위해서는 API 키를 받아야 하며, 개인 용도로 사용할 때는 무료입니다."
+
+#: tracspamfilter/templates/admin_external.html:202
+msgid ""
+"The Mollom filter uses the free\n"
+"          [1:Mollom]\n"
+"          service to decide if content submissions are potential spam. "
+"You need to obtain\n"
+"          API keys to use the service, which are freely available for "
+"personal use."
+msgstr ""
+"Mollom 필터는 제출된 내용이 스팸인지를 판단하기 위해 무료 [1:Mollom] 서비스를 활용합니다. 서비스를 사용하기 위해서는"
+" API 키를 받아야 하며, 개인 용도로 사용할 때는 무료입니다."
+
+#: tracspamfilter/templates/admin_external.html:215
+msgid "Secret key:"
+msgstr "비밀 키:"
+
+#: tracspamfilter/templates/admin_external.html:237
+msgid "Free access blacklists"
+msgstr "공개된 차단 목록"
+
+#: tracspamfilter/templates/admin_external.html:239
+msgid "Blacklists (comma separated):"
+msgstr "차단 목록 (쉼표로 구분):"
+
+#: tracspamfilter/templates/admin_external.html:243
+msgid ""
+"A list of DNS blacklists can be found at the [1:RBLCheck]\n"
+"                   service."
+msgstr "[1:RBLCheck] 서비스에서 DNS 차단 목록들을 찾아볼 수 있습니다."
+
+#: tracspamfilter/templates/admin_external.html:249
+msgid ""
+"You can enable or disable these filters from the “[1:General →\n"
+"        Plugins]” panel of the web administration interface."
+msgstr "웹 관리자 화면의 “[1:일반 → 플러그인]” 패널에서 필터를 활성화 또는 비활성화 할 수 있습니다."
+
+#: tracspamfilter/templates/admin_report.html:10
+msgid "Spam Reports"
+msgstr "스팸 신고"
+
+#: tracspamfilter/templates/admin_report.html:14
+msgid "Spam Filtering: Reports"
+msgstr "스팸 필터링: 신고"
+
+#: tracspamfilter/templates/admin_report.html:17
+#: tracspamfilter/templates/admin_spammonitor.html:20
+#, python-format
+msgid "Viewing entries %(start)s – %(end)s of %(total)s."
+msgstr "전체 %(total)s 개 중 %(start)s – %(end)s 항목을 표시합니다."
+
+#: tracspamfilter/templates/admin_report.html:45
+#: tracspamfilter/templates/monitortable.html:13
+msgid "Path"
+msgstr "경로"
+
+#: tracspamfilter/templates/admin_report.html:46
+#: tracspamfilter/templates/monitortable.html:14
+msgid "Author"
+msgstr "작성자"
+
+#: tracspamfilter/templates/admin_report.html:47
+#: tracspamfilter/templates/monitortable.html:17
+msgid "Date/time"
+msgstr "날짜 및 시간"
+
+#: tracspamfilter/templates/admin_report.html:63
+#: tracspamfilter/templates/monitortable.html:39
+#: tracspamfilter/templates/monitortable.html:44
+msgid "User was logged in"
+msgstr "사용자가 로그인 함"
+
+#: tracspamfilter/templates/admin_report.html:63
+#: tracspamfilter/templates/monitortable.html:39
+#: tracspamfilter/templates/monitortable.html:44
+msgid "User was not logged in"
+msgstr "사용자가 로그인하지 않음"
+
+#: tracspamfilter/templates/admin_report.html:74
+#: tracspamfilter/templates/monitortable.html:64
+msgid "No data available"
+msgstr "데이터가 없습니다."
+
+#: tracspamfilter/templates/admin_report.html:85
+#: tracspamfilter/templates/admin_spammonitor.html:57
+msgid "Delete selected"
+msgstr "선택한 항목 삭제하기"
+
+#: tracspamfilter/templates/admin_reportentry.html:10
+msgid "Spam Report"
+msgstr "스팸 신고"
+
+#: tracspamfilter/templates/admin_reportentry.html:20
+#: tracspamfilter/templates/admin_reportentry.html:21
+msgid "Previous Report Entry"
+msgstr "이전 신고 항목"
+
+#: tracspamfilter/templates/admin_reportentry.html:25
+#: tracspamfilter/templates/admin_spamentry.html:25
+msgid "Back to List"
+msgstr "목록으로 돌아가기"
+
+#: tracspamfilter/templates/admin_reportentry.html:30
+#: tracspamfilter/templates/admin_reportentry.html:31
+msgid "Next Report Entry"
+msgstr "다음 신고 항목"
+
+#: tracspamfilter/templates/admin_reportentry.html:35
+msgid "Spam Filtering: Report"
+msgstr "스팸 필터링: 신고 항목"
+
+#: tracspamfilter/templates/admin_reportentry.html:39
+msgid "Report Entry:"
+msgstr "신고 항목:"
+
+#: tracspamfilter/templates/admin_reportentry.html:40
+#: tracspamfilter/templates/admin_spamentry.html:40
+msgid "Information"
+msgstr "정보"
+
+#: tracspamfilter/templates/admin_reportentry.html:42
+#: tracspamfilter/templates/admin_spamentry.html:42
+msgid "Time:"
+msgstr "시간:"
+
+#: tracspamfilter/templates/admin_reportentry.html:45
+#: tracspamfilter/templates/admin_spamentry.html:45
+msgid "Path:"
+msgstr "경로:"
+
+#: tracspamfilter/templates/admin_reportentry.html:48
+#: tracspamfilter/templates/admin_spamentry.html:48
+msgid "Author:"
+msgstr "작성자:"
+
+#: tracspamfilter/templates/admin_reportentry.html:51
+#: tracspamfilter/templates/admin_spamentry.html:51
+msgid "Authenticated:"
+msgstr "인증됨:"
+
+#: tracspamfilter/templates/admin_reportentry.html:52
+#: tracspamfilter/templates/admin_spamentry.html:52
+#: tracspamfilter/templates/admin_user.html:81
+#: tracspamfilter/templates/admin_user.html:83
+msgid "yes"
+msgstr "예"
+
+#: tracspamfilter/templates/admin_reportentry.html:52
+#: tracspamfilter/templates/admin_spamentry.html:52
+#: tracspamfilter/templates/admin_user.html:82
+#: tracspamfilter/templates/admin_user.html:84
+msgid "no"
+msgstr "아니요"
+
+#: tracspamfilter/templates/admin_reportentry.html:54
+msgid "Comment:"
+msgstr "설명:"
+
+#: tracspamfilter/templates/admin_reportentry.html:58
+#: tracspamfilter/templates/admin_spamentry.html:75
+msgid "HTTP headers"
+msgstr "HTTP 헤더"
+
+#: tracspamfilter/templates/admin_reportentry.html:63
+#: tracspamfilter/templates/admin_spamentry.html:82
+msgid "Delete"
+msgstr "삭제"
+
+#: tracspamfilter/templates/admin_reportentry.html:68
+msgid "Possibly related log entries:"
+msgstr "관련되었을만한 로그 항목:"
+
+#: tracspamfilter/templates/admin_spamconfig.html:10
+msgid "Spam Filter"
+msgstr "스팸 필터"
+
+#: tracspamfilter/templates/admin_spamconfig.html:14
+msgid "Spam Filtering: Configuration"
+msgstr "스팸 필터링: 설정"
+
+#: tracspamfilter/templates/admin_spamconfig.html:15
+msgid ""
+"See [1:wiki page]\n"
+"    for a short documentation."
+msgstr "[1:위키 페이지]에 있는 간단한 설명 문서를 참조하십시오."
+
+#: tracspamfilter/templates/admin_spamconfig.html:16
+msgid "Help translating this plugin at [1:Transifex]."
+msgstr ""
+
+#: tracspamfilter/templates/admin_spamconfig.html:21
+msgid "Karma Tuning"
+msgstr "점수 조정"
+
+#: tracspamfilter/templates/admin_spamconfig.html:23
+msgid "Minimum karma required for a successful submission:"
+msgstr "제출 성공을 위한 최소 점수:"
+
+#: tracspamfilter/templates/admin_spamconfig.html:29
+msgid ""
+"Karma assigned to attachments (e.g. to allow relaxed rules for file "
+"uploads):"
+msgstr "첨부 파일에 대한 점수 (파일 올리기에 대해 완화된 규정을 적용할 때 사용):"
+
+#: tracspamfilter/templates/admin_spamconfig.html:35
+msgid ""
+"Content submissions are passed through a set of registered and enabled\n"
+"          [1:filter strategies], each of which check the submitted "
+"content\n"
+"          and may assign [2:karma points] to it. The sum of these karma\n"
+"          points needs to be greater than or equal to the minimum karma\n"
+"          configured here for the submission to be accepted."
+msgstr ""
+"제출된 내용은 등록되고 활성화 되어 있는 [1:필터]에 전달됩니다. 각 필터는 제출된 내용을 검사한 다음 [2:점수]를 부여할 수 "
+"있습니다. 제출된 내용이 승인되려면, 점수의 총합이 여기에 설정한 최소 점수보다 같거나 커야합니다."
+
+#: tracspamfilter/templates/admin_spamconfig.html:44
+#: tracspamfilter/templates/admin_statistics.html:33
+msgid "Strategy"
+msgstr "방법"
+
+#: tracspamfilter/templates/admin_spamconfig.html:45
+msgid "Karma points"
+msgstr "점수"
+
+#: tracspamfilter/templates/admin_spamconfig.html:46
+msgid "Description"
+msgstr "설명"
+
+#: tracspamfilter/templates/admin_spamconfig.html:60
+msgid "Logging"
+msgstr "로깅"
+
+#: tracspamfilter/templates/admin_spamconfig.html:64
+msgid "Enable"
+msgstr "활성"
+
+#: tracspamfilter/templates/admin_spamconfig.html:68
+msgid ""
+"The spam filter plugin can optionally log every content submission so\n"
+"          that you can monitor and tune the effectiveness of the "
+"filtering. The\n"
+"          log is stored in the database, and can be viewed under “[1:Spam"
+"\n"
+"          Filtering → Monitoring]” from the web administration\n"
+"          interface."
+msgstr ""
+"스팸 필터링의 상태를 확인하고 필터링의 효율성을 조절할 수 있도록, 스팸 필터 플러그인이 제출된 각 내용을 기록하도록 할 수 "
+"있습니다.\n"
+"로그 기록은 데이터베이스에 저장되며, 웹 관리자 화면의 “[1:스팸 필터링 → 모니터링]” 패널에서 볼 수 있습니다."
+
+#: tracspamfilter/templates/admin_spamconfig.html:76
+msgid ""
+"Purge old entries after\n"
+"            [1:]\n"
+"            days"
+msgstr "[1:]일이 지난 항목 삭제"
+
+#: tracspamfilter/templates/admin_spamconfig.html:84
+#, python-format
+msgid ""
+"Number of entries in log message display\n"
+"            (%(min)s-%(max)s)\n"
+"            [1:]"
+msgstr ""
+"목록에 표시할 로그 메시지의 수 (%(min)s-%(max)s)\n"
+"[1:]"
+
+#: tracspamfilter/templates/admin_spamconfig.html:94
+msgid "Authenticated"
+msgstr "사용자 인증"
+
+#: tracspamfilter/templates/admin_spamconfig.html:98
+msgid "Trust authenticated users"
+msgstr "인증 사용자를 신뢰함"
+
+#: tracspamfilter/templates/admin_spamconfig.html:102
+msgid ""
+"If authenticated users should not be trusted automatically, this\n"
+"          option must be disabled. Instead of full trust the supplied "
+"karma\n"
+"          value is used in this case."
+msgstr ""
+"인증된 사용자를 자동으로 신뢰해서는 안된다면, 이 옵션은 비활성화 되어야 합니다. 이럴 경우 완전히 신뢰하는 대신에, 부여할 점수를"
+" 지정할 수 있습니다."
+
+#: tracspamfilter/templates/admin_spamconfig.html:108
+msgid "Karma of authenticated users:"
+msgstr "인증된 사용자에 대한 점수:"
+
+#: tracspamfilter/templates/admin_spamentry.html:10
+#: tracspamfilter/templates/admin_spammonitor.html:10
+msgid "Spam Monitoring"
+msgstr "스팸 감시"
+
+#: tracspamfilter/templates/admin_spamentry.html:20
+#: tracspamfilter/templates/admin_spamentry.html:21
+msgid "Previous Log Entry"
+msgstr "이전 로그 항목"
+
+#: tracspamfilter/templates/admin_spamentry.html:30
+#: tracspamfilter/templates/admin_spamentry.html:31
+msgid "Next Log Entry"
+msgstr "다음 로그 항목"
+
+#: tracspamfilter/templates/admin_spamentry.html:35
+#: tracspamfilter/templates/admin_spammonitor.html:14
+msgid "Spam Filtering: Monitoring"
+msgstr "스팸 필터링: 감시"
+
+#: tracspamfilter/templates/admin_spamentry.html:39
+msgid "Log Entry:"
+msgstr "로그 항목:"
+
+#: tracspamfilter/templates/admin_spamentry.html:54
+msgid "IP address:"
+msgstr "IP 주소:"
+
+#: tracspamfilter/templates/admin_spamentry.html:57
+msgid "spam"
+msgstr "스팸"
+
+#: tracspamfilter/templates/admin_spamentry.html:57
+msgid "ham"
+msgstr "햄(유효)"
+
+#: tracspamfilter/templates/admin_spamentry.html:60
+msgid "Karma:"
+msgstr "점수:"
+
+#: tracspamfilter/templates/admin_spamentry.html:61
+#, python-format
+msgid ""
+"[1:%(karma)s]\n"
+"            (marked as %(spam_or_ham)s)\n"
+"            [2:\n"
+"              [3:%(reasons)s]\n"
+"            ]"
+msgstr ""
+"[1:%(karma)s]\n"
+"(%(spam_or_ham)s으로 표시됨)\n"
+"[2:[3:%(reasons)s]]"
+
+#: tracspamfilter/templates/admin_spamentry.html:71
+msgid "Submitted content"
+msgstr "제출된 내용"
+
+#: tracspamfilter/templates/admin_spamentry.html:80
+msgid "Mark as Spam"
+msgstr "스팸으로 표시"
+
+#: tracspamfilter/templates/admin_spamentry.html:81
+msgid "Mark as Ham"
+msgstr "햄(유효)으로 표시"
+
+#: tracspamfilter/templates/admin_spamentry.html:83
+msgid "Delete as Spam"
+msgstr "스팸으로 표시하고 삭제"
+
+#: tracspamfilter/templates/admin_spamentry.html:84
+msgid "Delete as Ham"
+msgstr "햄(유효)으로 표시하고 삭제"
+
+#: tracspamfilter/templates/admin_spamentry.html:85
+msgid "Delete (No Statistics)"
+msgstr "삭제 (통계 유지)"
+
+#: tracspamfilter/templates/admin_spamentry.html:93
+msgid "Remove registered user"
+msgstr "등록된 사용자 삭제"
+
+#: tracspamfilter/templates/admin_spamentry.html:99
+msgid "Search for user name"
+msgstr "사용자 이름 검색"
+
+#: tracspamfilter/templates/admin_spammonitor.html:18
+msgid "Note:"
+msgstr "주의:"
+
+#: tracspamfilter/templates/admin_spammonitor.html:18
+msgid "Logging by the spam filter is currently disabled."
+msgstr "스팸 필터에 의한 로깅이 현재 활성화되어 있지 않습니다."
+
+#: tracspamfilter/templates/admin_spammonitor.html:52
+msgid "Delete > 90%"
+msgstr "90% 초과 항목 삭제"
+
+#: tracspamfilter/templates/admin_spammonitor.html:55
+msgid "Mark selected as Spam"
+msgstr "선택한 항목을 스팸으로 표시"
+
+#: tracspamfilter/templates/admin_spammonitor.html:56
+msgid "Mark selected as Ham"
+msgstr "선택한 항목을 햄(유효)으로 표시"
+
+#: tracspamfilter/templates/admin_spammonitor.html:58
+msgid "Delete selected as Spam"
+msgstr "선택한 항목을 스팸으로 표시하고 삭제"
+
+#: tracspamfilter/templates/admin_spammonitor.html:59
+msgid "Delete selected as Ham"
+msgstr "선택한 항목을 햄(유효)으로 표시하고 삭제"
+
+#: tracspamfilter/templates/admin_statistics.html:10
+msgid "Spam Statistics"
+msgstr "스팸 통계"
+
+#: tracspamfilter/templates/admin_statistics.html:14
+msgid "Spam Filtering: Statistics"
+msgstr "스팸 필터링: 통계"
+
+#: tracspamfilter/templates/admin_statistics.html:17
+msgid "No submission statistics yet."
+msgstr "제출된 내용에 대한 통계가 아직 없습니다."
+
+#: tracspamfilter/templates/admin_statistics.html:21
+#, python-format
+msgid ""
+"%(count)s Submissions tested since %(time)s,\n"
+"        %(spam)s spam and\n"
+"        %(ham)s ham\n"
+"        (%(local)s of the tests could be solved local)."
+msgstr ""
+"%(time)s 이후로 %(count)s 개의 제출 내용을 테스트하였으며,\n"
+"%(spam)s는 스팸, %(ham)s는 햄(유효)입니다\n"
+"(%(local)s의 테스트를 내부 필터로 처리함)."
+
+#: tracspamfilter/templates/admin_statistics.html:34
+msgid "Type"
+msgstr "종류"
+
+#: tracspamfilter/templates/admin_statistics.html:36
+msgid "Train / Verify"
+msgstr "학습 / 검증"
+
+#: tracspamfilter/templates/admin_statistics.html:37
+msgid "Errors"
+msgstr "오류율"
+
+#: tracspamfilter/templates/admin_statistics.html:42
+#: tracspamfilter/templates/admin_statistics.html:44
+msgid "Spam"
+msgstr "스팸"
+
+#: tracspamfilter/templates/admin_statistics.html:43
+#: tracspamfilter/templates/admin_statistics.html:45
+msgid "Ham"
+msgstr "햄 (유효)"
+
+#: tracspamfilter/templates/admin_statistics.html:48
+#: tracspamfilter/templates/admin_statistics.html:55
+#: tracspamfilter/templates/admin_statistics.html:58
+msgid "Total"
+msgstr "전체"
+
+#: tracspamfilter/templates/admin_statistics.html:49
+msgid "Mean Delay"
+msgstr "평균 소요시간"
+
+#: tracspamfilter/templates/admin_statistics.html:50
+msgid "No Result"
+msgstr "결과 없음"
+
+#: tracspamfilter/templates/admin_statistics.html:51
+#: tracspamfilter/templates/admin_statistics.html:53
+msgid "Match"
+msgstr "일치"
+
+#: tracspamfilter/templates/admin_statistics.html:52
+#: tracspamfilter/templates/admin_statistics.html:54
+msgid "Mismatch"
+msgstr "불일치"
+
+#: tracspamfilter/templates/admin_statistics.html:56
+#: tracspamfilter/templates/admin_statistics.html:59
+msgid "Right"
+msgstr "맞음"
+
+#: tracspamfilter/templates/admin_statistics.html:57
+#: tracspamfilter/templates/admin_statistics.html:60
+msgid "Wrong"
+msgstr "틀림"
+
+#: tracspamfilter/templates/admin_statistics.html:68
+msgid "No tests yet."
+msgstr "테스트 결과가 아직 없습니다."
+
+#: tracspamfilter/templates/admin_statistics.html:71
+#, python-format
+msgid "%(seconds)s s"
+msgstr "%(seconds)s 초"
+
+#: tracspamfilter/templates/admin_statistics.html:100
+msgid "No spam yet."
+msgstr "스팸이 아직 없습니다."
+
+#: tracspamfilter/templates/admin_statistics.html:118
+msgid "No ham yet."
+msgstr "햄(유효)이 아직 없습니다."
+
+#: tracspamfilter/templates/admin_statistics.html:140
+msgid "Clear statistics"
+msgstr "통계 지우기"
+
+#: tracspamfilter/templates/admin_statistics.html:150
+msgid "Clear statistics database"
+msgstr "통계 데이터베이스 지우기"
+
+#: tracspamfilter/templates/admin_user.html:10
+msgid "Spam User Handling"
+msgstr "스팸 사용자 관리"
+
+#: tracspamfilter/templates/admin_user.html:14
+#, python-format
+msgid ""
+"Spam Filtering: User handling (%(type)s)\n"
+"       [1:%(count)s]"
+msgstr ""
+"스팸 필터링: 사용자 관리 (%(type)s)\n"
+"[1:%(count)s]"
+
+#: tracspamfilter/templates/admin_user.html:20
+msgid "Overview"
+msgstr "개요"
+
+#: tracspamfilter/templates/admin_user.html:21
+msgid "All"
+msgstr "전체"
+
+#: tracspamfilter/templates/admin_user.html:22
+#: tracspamfilter/templates/admin_user.html:53
+msgid "Registered"
+msgstr "등록됨"
+
+#: tracspamfilter/templates/admin_user.html:23
+msgid "Unused"
+msgstr "비활성"
+
+#: tracspamfilter/templates/admin_user.html:27
+#, python-format
+msgid ""
+"There are %(total)s\n"
+"    different entries in the database, %(registered)s users are\n"
+"    registered and %(unused)s have not been used."
+msgstr ""
+"데이터베이스에 %(total)s 개의 개별 항목이 존재하며, %(registered)s 명의 사용자가 등록하였고, "
+"%(unused)s 개 계정은 비활성 상태입니다."
+
+#: tracspamfilter/templates/admin_user.html:34
+msgid "Date"
+msgstr "시간"
+
+#: tracspamfilter/templates/admin_user.html:35
+#, python-format
+msgid "Action of user '%(username)s'"
+msgstr "'%(username)s' 사용자의 동작"
+
+#: tracspamfilter/templates/admin_user.html:51
+msgid "User name"
+msgstr "사용자 이름"
+
+#: tracspamfilter/templates/admin_user.html:52
+msgid "Last login"
+msgstr "최근 로그인"
+
+#: tracspamfilter/templates/admin_user.html:54
+msgid "Setup"
+msgstr "설정값"
+
+#: tracspamfilter/templates/admin_user.html:55
+msgid "E-Mail"
+msgstr "메일 주소"
+
+#: tracspamfilter/templates/admin_user.html:56
+msgid "Wiki edits"
+msgstr "위키 수정"
+
+#: tracspamfilter/templates/admin_user.html:57
+msgid "Ticket edits"
+msgstr "티켓 수정"
+
+#: tracspamfilter/templates/admin_user.html:58
+msgid "SVN edits"
+msgstr "SVN 수정"
+
+#: tracspamfilter/templates/admin_user.html:59
+msgid "Other"
+msgstr "기타"
+
+#: tracspamfilter/templates/admin_user.html:73
+msgid "Source"
+msgstr "출처"
+
+#: tracspamfilter/templates/admin_user.html:83
+#: tracspamfilter/templates/admin_user.html:84
+msgid "(password)"
+msgstr ""
+
+#: tracspamfilter/templates/admin_user.html:86
+msgid "(double)"
+msgstr "(이중)"
+
+#: tracspamfilter/templates/admin_user.html:89
+#: tracspamfilter/templates/admin_user.html:95
+#: tracspamfilter/templates/admin_user.html:101
+#: tracspamfilter/templates/admin_user.html:107
+msgid "user"
+msgstr "사용자"
+
+#: tracspamfilter/templates/admin_user.html:90
+#: tracspamfilter/templates/admin_user.html:96
+#: tracspamfilter/templates/admin_user.html:102
+#: tracspamfilter/templates/admin_user.html:108
+msgid "e-mail"
+msgstr "메일 주소"
+
+#: tracspamfilter/templates/admin_user.html:91
+#: tracspamfilter/templates/admin_user.html:97
+#: tracspamfilter/templates/admin_user.html:103
+#: tracspamfilter/templates/admin_user.html:109
+msgid "both"
+msgstr "둘 다"
+
+#: tracspamfilter/templates/admin_user.html:117
+msgid "Remove"
+msgstr "삭제"
+
+#: tracspamfilter/templates/admin_user.html:127
+msgid "Values must be URL encoded!"
+msgstr "입력값은 URL 형식으로 인코드 되어 있어야 합니다."
+
+#: tracspamfilter/templates/admin_user.html:129
+msgid "Old user:"
+msgstr "이전 사용자 이름:"
+
+#: tracspamfilter/templates/admin_user.html:132
+msgid "New user:"
+msgstr "새 사용자 이름:"
+
+#: tracspamfilter/templates/admin_user.html:138
+msgid "Change unauthorized user"
+msgstr "미인증 사용자 변경"
+
+#: tracspamfilter/templates/admin_user.html:138
+msgid "Change user"
+msgstr "사용자 변경"
+
+#: tracspamfilter/templates/admin_user.html:145
+#, python-format
+msgid "Remove %(num)d temporary session"
+msgid_plural "Remove %(num)s temporary sessions"
+msgstr[0] "임시 세션 %(num)s 개 삭제"
+
+#: tracspamfilter/templates/admin_user.html:150
+msgid "Convert emails to registered usernames"
+msgstr "메일 주소를 등록된 사용자 이름으로 변경"
+
+#: tracspamfilter/templates/monitortable.html:15
+msgid "IP Address"
+msgstr "IP 주소"
+
+#: tracspamfilter/templates/monitortable.html:16
+msgid "Karma"
+msgstr "점수"
+
+#: tracspamfilter/templates/verify_captcha.html:13
+msgid "Captcha Error"
+msgstr "보안 문자 오류"
+
+#: tracspamfilter/templates/verify_captcha.html:17
+msgid ""
+"Trac thinks your submission might be Spam.\n"
+"           To prove otherwise please provide a response to the following."
+msgstr ""
+"Trac 시스템은 제출 내용이 스팸일 가능성이 있다고 판단하였습니다. 스팸이 아니라는 것을 증명하려면, 다음 내용에 대해 대답해 "
+"주십시오."
+
+#: tracspamfilter/templates/verify_captcha.html:19
+msgid ""
+"Note - the captcha method is choosen randomly. Retry if the captcha does "
+"not work on your system!"
+msgstr "참고 - 보안 문자 방식은 무작위로 선택되었습니다. 만약 보안 문자가 표시되지 않았다면 재시도 하십시오."
+
+#: tracspamfilter/templates/verify_captcha.html:22
+msgid "Response:"
+msgstr "대답:"
