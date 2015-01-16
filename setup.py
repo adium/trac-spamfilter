@@ -15,7 +15,7 @@
 from setuptools import setup, find_packages
 
 PACKAGE = 'TracSpamFilter'
-VERSION = '1.0.0'
+VERSION = '1.0.0-1'
 
 extra = {}
 try:
@@ -50,7 +50,7 @@ setup(
 
     packages = find_packages(exclude=['*.tests*']),
     package_data = {'tracspamfilter': ['templates/*', 'htdocs/*', 'fonts/*', 'locale/*/LC_MESSAGES/*.mo']},
-    install_requires = ['Trac >= 1.0'],
+    install_requires = ['Trac >= 1.0', 'recaptcha_client>=1.0.6-1'],
     extras_require = {
         'DNS': ['dnspython>=1.3.5'],
         'SpamBayes': ['spambayes'],
