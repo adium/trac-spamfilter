@@ -503,7 +503,7 @@ class BayesAdminPageProvider(Component):
             else:
                 if 'reset' in req.args:
                     self.log.info('Resetting SpamBayes training database')
-                    env.db_transaction("DELETE FROM spamfilter_bayes")
+                    self.env.db_transaction("DELETE FROM spamfilter_bayes")
 
                 try:
                     min_training = int(req.args['min_training'])
